@@ -1,0 +1,4 @@
+﻿  main.cpp
+c:\users\célia figueiredo\documents\github\cg2017\aulas\aula2\main.cpp(20): warning C4244: 'initializing': conversion from 'double' to 'float', possible loss of data
+  piramide.vcxproj -> C:\Users\Célia Figueiredo\Documents\GitHub\CG2017\aulas\aula2\piramide\Debug\piramide.exe
+  piramide.vcxproj -> C:\Users\Célia Figueiredo\Documents\GitHub\CG2017\aulas\aula2\piramide\Debug\piramide.pdb (Partial PDB)

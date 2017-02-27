@@ -1,0 +1,39 @@
+﻿  main.cpp
+main.cpp(7): warning C4138: '*/' found outside of comment
+main.cpp(7): error C2059: syntax error: '/'
+C:\Program Files (x86)\Windows Kits\10\Include\10.0.10240.0\ucrt\math.h(13): error C2143: syntax error: missing ';' before '{'
+C:\Program Files (x86)\Windows Kits\10\Include\10.0.10240.0\ucrt\math.h(13): error C2447: '{': missing function header (old-style formal list?)
+main.cpp(26): warning C4244: 'initializing': conversion from 'double' to 'float', possible loss of data
+main.cpp(63): warning C4244: 'initializing': conversion from 'int' to 'float', possible loss of data
+main.cpp(75): error C3861: 'sin': identifier not found
+main.cpp(75): error C3861: 'cos': identifier not found
+main.cpp(75): error C2660: 'glVertex3f': function does not take 2 arguments
+main.cpp(76): error C3861: 'sin': identifier not found
+main.cpp(76): error C3861: 'cos': identifier not found
+main.cpp(76): error C2660: 'glVertex3f': function does not take 2 arguments
+main.cpp(82): error C3861: 'sin': identifier not found
+main.cpp(82): error C3861: 'cos': identifier not found
+main.cpp(82): error C2660: 'glVertex3f': function does not take 2 arguments
+main.cpp(83): error C3861: 'sin': identifier not found
+main.cpp(83): error C3861: 'cos': identifier not found
+main.cpp(83): error C2660: 'glVertex3f': function does not take 2 arguments
+main.cpp(89): error C3861: 'sin': identifier not found
+main.cpp(89): error C3861: 'cos': identifier not found
+main.cpp(89): error C2660: 'glVertex3f': function does not take 2 arguments
+main.cpp(90): error C3861: 'sin': identifier not found
+main.cpp(90): error C3861: 'cos': identifier not found
+main.cpp(90): error C2660: 'glVertex3f': function does not take 2 arguments
+main.cpp(91): error C3861: 'sin': identifier not found
+main.cpp(91): error C3861: 'cos': identifier not found
+main.cpp(91): error C2660: 'glVertex3f': function does not take 2 arguments
+main.cpp(94): error C3861: 'sin': identifier not found
+main.cpp(94): error C3861: 'cos': identifier not found
+main.cpp(94): error C2660: 'glVertex3f': function does not take 2 arguments
+main.cpp(95): error C3861: 'sin': identifier not found
+main.cpp(95): error C3861: 'cos': identifier not found
+main.cpp(95): error C2660: 'glVertex3f': function does not take 2 arguments
+main.cpp(96): error C3861: 'sin': identifier not found
+main.cpp(96): error C3861: 'cos': identifier not found
+main.cpp(96): error C2660: 'glVertex3f': function does not take 2 arguments
+main.cpp(120): warning C4305: '+=': truncation from 'double' to 'float'
+main.cpp(132): fatal error C1075: the left brace '{' was unmatched at the end of the file

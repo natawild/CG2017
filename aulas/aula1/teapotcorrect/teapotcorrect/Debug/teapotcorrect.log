@@ -1,0 +1,3 @@
+﻿  main.cpp
+c:\users\célia figueiredo\documents\visual studio 2015\projects\teapotcorrect\main.cpp(16): warning C4244: 'initializing': conversion from 'double' to 'float', possible loss of data
+  teapotcorrect.vcxproj -> c:\users\célia figueiredo\documents\visual studio 2015\Projects\teapotcorrect\Debug\teapotcorrect.exe

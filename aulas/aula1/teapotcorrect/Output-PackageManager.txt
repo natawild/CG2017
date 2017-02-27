@@ -1,0 +1,13 @@
+﻿Attempting to gather dependencies information for package 'nupengl.core.0.1.0.1' with respect to project 'teapotcorrect', targeting 'native,Version=v0.0'
+Attempting to resolve dependencies for package 'nupengl.core.0.1.0.1' with DependencyBehavior 'Lowest'
+Resolving actions to install package 'nupengl.core.0.1.0.1'
+Resolved actions to install package 'nupengl.core.0.1.0.1'
+Adding package 'nupengl.core.redist.0.1.0.1' to folder 'c:\users\célia figueiredo\documents\visual studio 2015\Projects\teapotcorrect\packages'
+Added package 'nupengl.core.redist.0.1.0.1' to folder 'c:\users\célia figueiredo\documents\visual studio 2015\Projects\teapotcorrect\packages'
+Added package 'nupengl.core.redist.0.1.0.1' to 'packages.config'
+Successfully installed 'nupengl.core.redist 0.1.0.1' to teapotcorrect
+Adding package 'nupengl.core.0.1.0.1' to folder 'c:\users\célia figueiredo\documents\visual studio 2015\Projects\teapotcorrect\packages'
+Added package 'nupengl.core.0.1.0.1' to folder 'c:\users\célia figueiredo\documents\visual studio 2015\Projects\teapotcorrect\packages'
+Added package 'nupengl.core.0.1.0.1' to 'packages.config'
+Successfully installed 'nupengl.core 0.1.0.1' to teapotcorrect
+========== Finished ==========
