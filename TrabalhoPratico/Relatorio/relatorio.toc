@@ -1,0 +1,28 @@
+\select@language {portuges}
+\contentsline {chapter}{\numberline {1}Gerador}{1}
+\contentsline {section}{\numberline {1.1}Objetivos}{1}
+\contentsline {section}{\numberline {1.2}Programa principal}{1}
+\contentsline {section}{\numberline {1.3}Primitivas}{2}
+\contentsline {subsection}{\numberline {1.3.1}Gerar Planos}{2}
+\contentsline {subsubsection}{Plano em XZ (Y=constante)}{2}
+\contentsline {subsubsection}{Plano em XY (Z=constante)}{4}
+\contentsline {subsubsection}{Plano em YZ (X=constante)}{5}
+\contentsline {subsection}{\numberline {1.3.2}Gerar Caixa}{7}
+\contentsline {subsection}{\numberline {1.3.3}Gerar C\IeC {\'\i }rculo}{9}
+\contentsline {subsection}{\numberline {1.3.4}Gerar Cone}{11}
+\contentsline {subsection}{\numberline {1.3.5}Gerar Esfera}{14}
+\contentsline {chapter}{\numberline {2}Gerador1}{16}
+\contentsline {section}{\numberline {2.1}Ponto3D}{16}
+\contentsline {section}{\numberline {2.2}CoordsPolares}{17}
+\contentsline {section}{\numberline {2.3}CoordsEsfericas}{18}
+\contentsline {section}{\numberline {2.4}Figura}{21}
+\contentsline {section}{\numberline {2.5}TinyXML-2}{21}
+\contentsline {chapter}{\numberline {3}Motor}{22}
+\contentsline {section}{\numberline {3.1}Objectivos}{22}
+\contentsline {section}{\numberline {3.2}Leitura Ficheiros}{22}
+\contentsline {subsection}{\numberline {3.2.1}Ficheiro XML}{22}
+\contentsline {subsection}{\numberline {3.2.2}Ficheiros .3d}{23}
+\contentsline {section}{\numberline {3.3}Desenho dos pontos}{23}
+\contentsline {section}{\numberline {3.4}C\IeC {\^a}mara}{24}
+\contentsline {section}{\numberline {3.5}Menu}{25}
+\contentsline {chapter}{\numberline {4}Conclus\IeC {\~a}o}{27}
