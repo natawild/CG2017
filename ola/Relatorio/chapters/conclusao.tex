@@ -1,0 +1,14 @@
+\chapter{Conclusão}
+
+O trabalho apresentado cumpre todos os requisitos propostos.
+Foi feito um gerador de figuras com capacidade de gerar pontos para um plano, caixa, cone e esfera como pedido. Além destas figuras foram ainda desenvolvidas funções adicionais que permitem criar planos sem ser no eixo XZ bem como foram desenvolvidas funções para a criação de círculos e cilindros, algo que não era expressamente pedido.
+
+No lado do motor, a aplicação consegue ler ficheiros XML e .3D e a partir dai desenhar as figuras com os pontos especificados nos ficheiros. Adicionalmente ao sugerido, incluiu-se também uma câmara colocada sobre uma esfera que permite ao utilizador ver a figura desenhada de vários ângulos. Incluiu-se ainda um pequeno menu para alterar o modo de visualização da figura.
+
+O código produzido recorreu ao uso de classes, o que evitou bastantes repetições de código e sobretudo gerou um código fácil de ler, perceber e manter. Por estes motivos, considera-se como bastante sólido o trabalho desenvolvido.
+
+Não obstante, existem aspectos em que o trabalho que poderiam ser melhorados e serão alvo de atenção no futuro. 
+
+Em primeiro lugar, destaca-se a questão da câmara. Nesta fase implementou-se a câmara usando coordenadas esféricas. Decidiu-se que a camâra seria por isso apenas uma instância da classe \textit{CoordsEsfericas}. Deste modo mover a câmara corresponde apenas a chamar as funções definidas na classe. Este aspecto facilitou imenso a implementação da câmara, no entanto trouxe também algumas desvantagens. Sendo a câmara uma instância de \textit{CoordsEsfericas} significa que a câmara só pode ter coordenadas esféricas. Isto dificulta a adição de funcionalidades extra à câmara. Além disso, enquanto que é perfeitamente válido que as coordenadas esféricas possam referir um ponto ``no polo norte'' da esfera, tal não é verdade para a câmara, pois nesse caso o objeto pode deixar de se tornar visível. Isto deixa a entender que no futuro a câmara terá que pertencer a uma classe própria e muito provavelmente será esse o caminho a seguir.
+
+Em segundo lugar, refere-se a modularidade e encapsulamento de dados, aspectos que foram deixados um pouco para segundo plano. A prioridade desde cedo foi ter código simples, funcional e fácil de ler. Tal implicou que muitas vezes quando confrontados com a decisão de manter algumas variáveis como públicas ou privadas a decisão tenha sido manter públicas. Exemplos disso são as classes Ponto3D (note-se a falta de getters e setters) e as classes das coordenadas esféricas e polares. Enquanto que ter variáveis públicas em classes como a Ponto3D seja relativamente irrelevante, tal já não é verdade para as classes das coordenadas. Como o objetivo principal do projeto não é ter bons módulos de dados nem bom encapsulamento dos mesmos, estes aspectos foram deixados para segundo plano, no entanto serão alvo de uma atenção mais cuidada no futuro.

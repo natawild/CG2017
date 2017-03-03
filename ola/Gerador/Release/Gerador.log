@@ -1,0 +1,17 @@
+﻿  Gerador.cpp
+c:\users\célia figueiredo\documents\github\cg-1516\gerador\src\headers\..\..\..\utils\CoordsEsfericas.h(56): warning C4305: '=': truncation from 'double' to 'float'
+c:\users\célia figueiredo\documents\github\cg-1516\gerador\src\headers\Figura.h(108): warning C4244: 'initializing': conversion from 'double' to 'float', possible loss of data
+c:\users\célia figueiredo\documents\github\cg-1516\gerador\src\headers\Figura.h(170): warning C4244: 'initializing': conversion from 'double' to 'float', possible loss of data
+c:\users\célia figueiredo\documents\github\cg-1516\gerador\src\headers\Figura.h(201): warning C4244: 'initializing': conversion from 'double' to 'float', possible loss of data
+c:\users\célia figueiredo\documents\github\cg-1516\gerador\src\headers\Figura.h(213): warning C4244: 'argument': conversion from 'double' to 'float', possible loss of data
+c:\users\célia figueiredo\documents\github\cg-1516\gerador\src\headers\Figura.h(214): warning C4244: 'argument': conversion from 'double' to 'float', possible loss of data
+c:\users\célia figueiredo\documents\github\cg-1516\gerador\src\headers\Figura.h(215): warning C4244: 'argument': conversion from 'double' to 'float', possible loss of data
+c:\users\célia figueiredo\documents\github\cg-1516\gerador\src\headers\Figura.h(216): warning C4244: 'argument': conversion from 'double' to 'float', possible loss of data
+c:\users\célia figueiredo\documents\github\cg-1516\gerador\src\headers\Figura.h(232): warning C4244: 'initializing': conversion from 'double' to 'float', possible loss of data
+c:\users\célia figueiredo\documents\github\cg-1516\gerador\src\headers\Figura.h(233): warning C4244: 'initializing': conversion from 'double' to 'float', possible loss of data
+  Generating code
+  0 of 266 functions ( 0.0%) were compiled, the rest were copied from previous compilation.
+    0 functions were new in current compilation
+    28 functions had inline decision re-evaluated but remain unchanged
+  Finished generating code
+  Gerador.vcxproj -> C:\Users\Célia Figueiredo\Documents\GitHub\CG-1516\Gerador\Release\Gerador.exe
