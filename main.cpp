@@ -345,7 +345,7 @@ int main(int argc, char **argv)
 			}
 			// argv => gerador plano size ficheiro
 			// so um tamanho entrado, faz um quadrado
-			if(argc == 5)
+			if(!flag && (argc == 4))
 			{
 				if(sscanf(argv[2],"%f",&sizeX))
 					r = drawPlane_Points(sizeX, 0.0f, sizeX, 0.0f, 0.0f, 0.0f, 0, 0, buffer);
