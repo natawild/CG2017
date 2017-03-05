@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.15 (MiKTeX 2.9 64-bit) (preloaded format=pdflatex 2016.3.4)  3 MAR 2017 19:52
+This is pdfTeX, Version 3.14159265-2.6-1.40.15 (MiKTeX 2.9 64-bit) (preloaded format=pdflatex 2016.3.4)  5 MAR 2017 22:10
 entering extended mode
 **relatorio.tex
 (relatorio.tex
@@ -1277,203 +1277,211 @@ Overfull \hbox (7.74065pt too wide) in paragraph at lines 40--42
  (chapters/resumo.tex [1
 
 ] [1])
-(chapters/parte1.tex
+(chapters/introducao.tex
 Cap\'{\i }tulo 1.
-LaTeX Font Info:    Try loading font information for T1+pcr on input line 14.
-("C:\Program Files\MiKTeX 2.9\tex\latex\psnfss\t1pcr.fd"
-File: t1pcr.fd 2001/06/04 font definitions for T1/pcr.
-) [1
+) (chapters/parte1.tex [1
 
 ]
+Cap\'{\i }tulo 2.
+LaTeX Font Info:    Try loading font information for OMS+ptm on input line 16.
+("C:\Program Files\MiKTeX 2.9\tex\latex\psnfss\omsptm.fd"
+File: omsptm.fd 
+)
+LaTeX Font Info:    Font shape `OMS/ptm/m/n' in size <12> not available
+(Font)              Font shape `OMS/cmsy/m/n' tried instead on input line 16.
+LaTeX Font Info:    Try loading font information for T1+pcr on input line 44.
+
+("C:\Program Files\MiKTeX 2.9\tex\latex\psnfss\t1pcr.fd"
+File: t1pcr.fd 2001/06/04 font definitions for T1/pcr.
+) [2
+
+] [3]
 LaTeX Font Info:    Font shape `T1/ptm/bx/n' in size <14.4> not available
-(Font)              Font shape `T1/ptm/b/n' tried instead on input line 74.
+(Font)              Font shape `T1/ptm/b/n' tried instead on input line 102.
 
-
-LaTeX Warning: Reference `p1:fig:p3_planoY' on page 2 undefined on input line 8
-7.
-
-<imagens/p3_planoY.png, id=26, 853.7496pt x 497.6994pt>
+<imagens/p3_planoY.png, id=34, 853.7496pt x 497.6994pt>
 File: imagens/p3_planoY.png Graphic file (type png)
 
 <use imagens/p3_planoY.png>
-Package pdftex.def Info: imagens/p3_planoY.png used on input line 91.
+Package pdftex.def Info: imagens/p3_planoY.png used on input line 119.
 (pdftex.def)             Requested size: 426.87376pt x 248.84909pt.
 LaTeX Font Info:    Font shape `T1/ptm/bx/n' in size <10.95> not available
-(Font)              Font shape `T1/ptm/b/n' tried instead on input line 92.
-
-
-LaTeX Warning: Reference `p1:fig:p3_planoY' on page 2 undefined on input line 9
-6.
-
-[2] [3 <./imagens/p3_planoY.png>]
-<imagens/p3_plano_4_2.png, id=35, 379.4175pt x 170.13562pt>
+(Font)              Font shape `T1/ptm/b/n' tried instead on input line 120.
+ [4 <./imagens/p3_planoY.png>]
+<imagens/p3_plano_4_2.png, id=40, 379.4175pt x 170.13562pt>
 File: imagens/p3_plano_4_2.png Graphic file (type png)
 
 <use imagens/p3_plano_4_2.png>
-Package pdftex.def Info: imagens/p3_plano_4_2.png used on input line 139.
+Package pdftex.def Info: imagens/p3_plano_4_2.png used on input line 167.
 (pdftex.def)             Requested size: 189.70828pt x 85.0676pt.
 
-<imagens/p3_planoZ.png, id=36, 853.7496pt x 450.483pt>
+<imagens/p3_planoZ.png, id=41, 853.7496pt x 450.483pt>
 File: imagens/p3_planoZ.png Graphic file (type png)
 
 <use imagens/p3_planoZ.png>
-Package pdftex.def Info: imagens/p3_planoZ.png used on input line 151.
+Package pdftex.def Info: imagens/p3_planoZ.png used on input line 179.
 (pdftex.def)             Requested size: 426.87376pt x 225.24094pt.
- [4 <./imagens/p3_plano_4_2.png> <./imagens/p3_planoZ.png>] <imagens/p3_planoX.
-png, id=43, 853.2678pt x 519.3804pt>
+ [5 <./imagens/p3_plano_4_2.png>] [6 <./imagens/p3_planoZ.png>] <imagens/p3_pla
+noX.png, id=50, 853.2678pt x 519.3804pt>
 File: imagens/p3_planoX.png Graphic file (type png)
 
 <use imagens/p3_planoX.png>
-Package pdftex.def Info: imagens/p3_planoX.png used on input line 206.
+Package pdftex.def Info: imagens/p3_planoX.png used on input line 234.
 (pdftex.def)             Requested size: 426.63286pt x 259.68956pt.
- [5] [6 <./imagens/p3_planoX.png>]
-<imagens/p3_Caixa.png, id=51, 622.0038pt x 423.984pt>
+ [7 <./imagens/p3_planoX.png>]
+
+LaTeX Warning: Reference `p3:planos' on page 8 undefined on input line 292.
+
+
+LaTeX Warning: Reference `p3:planos' on page 8 undefined on input line 294.
+
+<imagens/p3_Caixa.png, id=55, 622.0038pt x 423.984pt>
 File: imagens/p3_Caixa.png Graphic file (type png)
 
 <use imagens/p3_Caixa.png>
-Package pdftex.def Info: imagens/p3_Caixa.png used on input line 272.
+Package pdftex.def Info: imagens/p3_Caixa.png used on input line 300.
 (pdftex.def)             Requested size: 311.00114pt x 211.99147pt.
- [7 <./imagens/p3_Caixa.png>]
-<imagens/p3_caixa_6_3_4.png, id=56, 499.8675pt x 432.86719pt>
+ [8] [9 <./imagens/p3_Caixa.png>]
+<imagens/p3_caixa_6_3_4.png, id=63, 499.8675pt x 432.86719pt>
 File: imagens/p3_caixa_6_3_4.png Graphic file (type png)
 
 <use imagens/p3_caixa_6_3_4.png>
-Package pdftex.def Info: imagens/p3_caixa_6_3_4.png used on input line 333.
+Package pdftex.def Info: imagens/p3_caixa_6_3_4.png used on input line 361.
 (pdftex.def)             Requested size: 249.93314pt x 216.43306pt.
- [8]
-<imagens/p3_circulo.png, id=60, 549.252pt x 420.6114pt>
+ [10 <./imagens/p3_caixa_6_3_4.png>]
+<imagens/p3_circulo.png, id=69, 549.252pt x 420.6114pt>
 File: imagens/p3_circulo.png Graphic file (type png)
 
 <use imagens/p3_circulo.png>
-Package pdftex.def Info: imagens/p3_circulo.png used on input line 346.
+Package pdftex.def Info: imagens/p3_circulo.png used on input line 374.
 (pdftex.def)             Requested size: 274.62532pt x 210.30519pt.
- [9 <./imagens/p3_caixa_6_3_4.png> <./imagens/p3_circulo.png>] [10]
-<imagens/p3_seccaoCone_edit.png, id=71, 630.1944pt x 316.5426pt>
+ [11 <./imagens/p3_circulo.png>] [12]
+<imagens/p3_seccaoCone_edit.png, id=78, 630.1944pt x 316.5426pt>
 File: imagens/p3_seccaoCone_edit.png Graphic file (type png)
 
 <use imagens/p3_seccaoCone_edit.png>
-Package pdftex.def Info: imagens/p3_seccaoCone_edit.png used on input line 405.
+Package pdftex.def Info: imagens/p3_seccaoCone_edit.png used on input line 433.
 
 (pdftex.def)             Requested size: 315.09642pt x 158.2709pt.
 
-<imagens/p3_conePerfil.png, id=72, 459.1554pt x 501.072pt>
+<imagens/p3_conePerfil.png, id=79, 459.1554pt x 501.072pt>
 File: imagens/p3_conePerfil.png Graphic file (type png)
 
 <use imagens/p3_conePerfil.png>
-Package pdftex.def Info: imagens/p3_conePerfil.png used on input line 414.
+Package pdftex.def Info: imagens/p3_conePerfil.png used on input line 442.
 (pdftex.def)             Requested size: 229.57713pt x 250.53539pt.
- [11 <./imagens/p3_seccaoCone_edit.png>]
-[12 <./imagens/p3_conePerfil.png>]
-<imagens/p3_cone_2_3_10_10.png, id=85, 316.93407pt x 302.63063pt>
+ [13 <./imagens/p3_seccaoCone_edit.png>]
+[14 <./imagens/p3_conePerfil.png>]
+<imagens/p3_cone_2_3_10_10.png, id=91, 316.93407pt x 302.63063pt>
 File: imagens/p3_cone_2_3_10_10.png Graphic file (type png)
 
 <use imagens/p3_cone_2_3_10_10.png>
-Package pdftex.def Info: imagens/p3_cone_2_3_10_10.png used on input line 468.
+Package pdftex.def Info: imagens/p3_cone_2_3_10_10.png used on input line 496.
 (pdftex.def)             Requested size: 158.46664pt x 151.31494pt.
- [13 <./imagens/p3_cone_2_3_10_10.png>]
-<imagens/p3_esferaSeccao_edit.png, id=90, 581.0508pt x 251.0178pt>
+ [15 <./imagens/p3_cone_2_3_10_10.png>]
+<imagens/p3_esferaSeccao_edit.png, id=96, 581.0508pt x 251.0178pt>
 File: imagens/p3_esferaSeccao_edit.png Graphic file (type png)
 
 <use imagens/p3_esferaSeccao_edit.png>
-Package pdftex.def Info: imagens/p3_esferaSeccao_edit.png used on input line 48
-8.
+Package pdftex.def Info: imagens/p3_esferaSeccao_edit.png used on input line 51
+6.
 (pdftex.def)             Requested size: 290.52469pt x 125.50859pt.
- [14 <./imagens/p3_esferaSeccao_edit.png>] <imagens/p3_esfera_2_20_20.png, id=9
-5, 398.23781pt x 341.02406pt>
+ [16 <./imagens/p3_esferaSeccao_edit.png>] <imagens/p3_esfera_2_20_20.png, id=1
+02, 398.23781pt x 341.02406pt>
 File: imagens/p3_esfera_2_20_20.png Graphic file (type png)
 
 <use imagens/p3_esfera_2_20_20.png>
-Package pdftex.def Info: imagens/p3_esfera_2_20_20.png used on input line 527.
+Package pdftex.def Info: imagens/p3_esfera_2_20_20.png used on input line 555.
 (pdftex.def)             Requested size: 199.11841pt x 170.51161pt.
- [15 <./imagens/p3_esfera_2_20_20.png>]
-Cap\'{\i }tulo 2.
-[16
+ [17 <./imagens/p3_esfera_2_20_20.png>]
+Cap\'{\i }tulo 3.
+[18
 
-] <imagens/p1_polarCoords.png, id=104, 201.00093pt x 147.55125pt>
+] <imagens/p1_polarCoords.png, id=110, 201.00093pt x 147.55125pt>
 File: imagens/p1_polarCoords.png Graphic file (type png)
 
 <use imagens/p1_polarCoords.png>
-Package pdftex.def Info: imagens/p1_polarCoords.png used on input line 567.
+Package pdftex.def Info: imagens/p1_polarCoords.png used on input line 595.
 (pdftex.def)             Requested size: 201.00043pt x 147.55087pt.
 
-Underfull \hbox (badness 10000) in paragraph at lines 572--573
+Underfull \hbox (badness 10000) in paragraph at lines 600--601
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 578--579
+Underfull \hbox (badness 10000) in paragraph at lines 606--607
 
  []
 
-[17 <./imagens/p1_polarCoords.png>]
-<imagens/p1_sphericalCoords.png, id=109, 420.06938pt x 388.45125pt>
+[19 <./imagens/p1_polarCoords.png>]
+<imagens/p1_sphericalCoords.png, id=115, 420.06938pt x 388.45125pt>
 File: imagens/p1_sphericalCoords.png Graphic file (type png)
 
 <use imagens/p1_sphericalCoords.png>
-Package pdftex.def Info: imagens/p1_sphericalCoords.png used on input line 630.
+Package pdftex.def Info: imagens/p1_sphericalCoords.png used on input line 658.
 
 (pdftex.def)             Requested size: 210.03418pt x 194.22514pt.
 
-Underfull \hbox (badness 10000) in paragraph at lines 635--636
+Underfull \hbox (badness 10000) in paragraph at lines 663--664
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 641--642
+Underfull \hbox (badness 10000) in paragraph at lines 669--670
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 644--645
+Underfull \hbox (badness 10000) in paragraph at lines 672--673
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 650--651
+Underfull \hbox (badness 10000) in paragraph at lines 678--679
 
  []
 
-[18]
-Overfull \hbox (3.89143pt too wide) in paragraph at lines 663--664
+[20]
+Overfull \hbox (3.89143pt too wide) in paragraph at lines 691--692
 []\T1/ptm/m/n/12 O ponto chave desta classe é que as va-riá-veis das co-or-de-n
 a-das es-fé-ri-cas e car-te-si-a-nas referem-
  []
 
-[19 <./imagens/p1_sphericalCoords.png>] [20]) (chapters/parte2.tex [21]
-Cap\'{\i }tulo 3.
-[22
+[21 <./imagens/p1_sphericalCoords.png>] [22]) (chapters/parte2.tex [23]
+Cap\'{\i }tulo 4.
+[24
 
-] [23] [24] <imagens/p1_menuOpcoes.png, id=135, 118.19156pt x 76.03406pt>
+] [25] [26] <imagens/p1_menuOpcoes.png, id=141, 118.19156pt x 76.03406pt>
 File: imagens/p1_menuOpcoes.png Graphic file (type png)
 
 <use imagens/p1_menuOpcoes.png>
 Package pdftex.def Info: imagens/p1_menuOpcoes.png used on input line 169.
 (pdftex.def)             Requested size: 118.19127pt x 76.03386pt.
- [25 <./imagens/p1_menuOpcoes.png>]
-<imagens/p1_fill.png, id=140, 331.2375pt x 435.12563pt>
+ [27 <./imagens/p1_menuOpcoes.png>]
+<imagens/p1_fill.png, id=146, 331.2375pt x 435.12563pt>
 File: imagens/p1_fill.png Graphic file (type png)
 
 <use imagens/p1_fill.png>
 Package pdftex.def Info: imagens/p1_fill.png used on input line 211.
 (pdftex.def)             Requested size: 66.24632pt x 87.02357pt.
 
-<imagens/p1_line.png, id=141, 239.39438pt x 408.77719pt>
+<imagens/p1_line.png, id=147, 239.39438pt x 408.77719pt>
 File: imagens/p1_line.png Graphic file (type png)
 
 <use imagens/p1_line.png>
 Package pdftex.def Info: imagens/p1_line.png used on input line 218.
 (pdftex.def)             Requested size: 47.87802pt x 81.75398pt.
 
-<imagens/p1_point.png, id=142, 255.95625pt x 408.77719pt>
+<imagens/p1_point.png, id=148, 255.95625pt x 408.77719pt>
 File: imagens/p1_point.png Graphic file (type png)
 
 <use imagens/p1_point.png>
 Package pdftex.def Info: imagens/p1_point.png used on input line 225.
 (pdftex.def)             Requested size: 51.19034pt x 81.75398pt.
-) (chapters/conclusao.tex [26 <./imagens/p1_fill.png> <./imagens/p1_line.png> <
+) (chapters/conclusao.tex [28 <./imagens/p1_fill.png> <./imagens/p1_line.png> <
 ./imagens/p1_point.png>]
-Cap\'{\i }tulo 4.
-) [27
+Cap\'{\i }tulo 5.
+) [29
 
 ] (relatorio.aux)
 
@@ -1484,10 +1492,10 @@ LaTeX Warning: There were multiply-defined labels.
 
  ) 
 Here is how much of TeX's memory you used:
- 31496 strings out of 493698
- 739503 string characters out of 3144375
- 864528 words of memory out of 3000000
- 34286 multiletter control sequences out of 15000+200000
+ 31517 strings out of 493698
+ 739850 string characters out of 3144375
+ 864537 words of memory out of 3000000
+ 34301 multiletter control sequences out of 15000+200000
  49595 words of font info for 60 fonts, out of 3000000 for 9000
  1025 hyphenation exceptions out of 8191
  62i,7n,83p,10415b,609s stack positions out of 5000i,500n,10000p,200000b,50000s
@@ -1503,9 +1511,9 @@ Files/MiKTeX 2.9/fonts/type1/urw/times/utmb8a.pfb><C:/Program Files/MiKTeX 2.9/
 fonts/type1/urw/times/utmbi8a.pfb><C:/Program Files/MiKTeX 2.9/fonts/type1/urw/
 times/utmr8a.pfb><C:/Program Files/MiKTeX 2.9/fonts/type1/urw/times/utmri8a.pfb
 >
-Output written on relatorio.pdf (30 pages, 1099265 bytes).
+Output written on relatorio.pdf (32 pages, 1103027 bytes).
 PDF statistics:
- 191 PDF objects out of 1000 (max. 8388607)
+ 198 PDF objects out of 1000 (max. 8388607)
  0 named destinations out of 1000 (max. 500000)
  118 words of extra memory for PDF output out of 10000 (max. 10000000)
 

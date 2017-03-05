@@ -1,10 +1,40 @@
 \chapter{Gerador}
 \label{cap:p1}
 
-\section{Objetivos}
 
-O gerador é uma aplicação que é capaz de receber e interpretar pedidos do utilizador para desenho de figuras e gerar um ficheiro .3d com os pontos correspondentes à figura pedida.
-Nesta primeira etapa, o objetivo implementar o suporte à criação de um plano, uma caixa, um cone e uma esfera.
+O \textit{generator} é um programa que é capaz de receber e interpretar pedidos do utilizador para desenho de figuras e gerar um ficheiro '.3d' com os pontos correspondentes à figura pedida. A lista de pontos está ordenada de forma a formarem triângulos que juntos desenham a figura desejada. 
+
+Nesta primeira etapa, o objetivo implementar o suporte à criação de um plano, uma caixa, um cone e uma esfera. 
+
+
+\section{Funcionamento}
+
+Nesta primeira fase o \textit{generator} é capaz de criar diversas primitivas gráficas
+diferentes, entre as quais: \textit{plane} (plano), \textit{box} (paralelepípedo), \textit{sphere} (esfera), \textit{cone}. Para cada uma das primitivas geométricas é possível gerar o ficheiro correspondente através dos comandos:
+
+\begin{itemize}
+	\item PLANE: generator plano/plane <comprimento largura> <ficheiro>, onde a largura e comprimento são opcionais 
+	
+	\item BOX: generator box/caixa <sizeX sixeY sizeZ divisões> <ficheiro>, onde existe a possibilidade de as divisões serem opcionais
+	
+	\item SPHERE: generator sphere/esfera <raio fatias camadas> <ficheiro>
+	
+	\item CONE: generator cone <raio altura fatias camadas> <ficheiro>
+	
+\end{itemize}
+
+
+Para a criação das formas geométricas é preciso obedecer a algumas restrições
+com a passagem de argumentos, o primeiro parâmetro a ser passado deverá
+ser o nome da figura a desenhar, o último será o nome do ficheiro onde será
+guardada a lista de pontos, sendo a extensão “.3d” adicionada automaticamente
+pelo generator. Sendo isto obedecido, o número de argumentos entre
+o nome da figura e o nome do ficheiro varia consoante o tipo de figura a ser
+criada, mas esses argumentos deverão ser numerais.
+
+
+\section{Algoritmo de Geração de Pontos}
+
 
 \section{Programa principal}
 
@@ -61,10 +91,8 @@ criar a figura
 Mostra mensagem de ajuda com sintaxe dos comandos
 }
 
-
 return 0;
 }
-
 \end{Verbatim}
 
 \section{Primitivas}
@@ -72,7 +100,7 @@ return 0;
 Nesta secção apresentam-se os comandos correspondentes aos pedidos de figuras que o utilizador pode fazer e é explicada a sua implementação.
 
 \subsection{Gerar Planos}
-\label{p3:planos}
+\label{p1:planos}
 
 Para gerar um plano, o utilizador deve efetuar o comando com a seguinte sintaxe:
 
@@ -84,7 +112,7 @@ O resultado deste comando é a criação de um plano em XZ centrado no ponto (0,
 
 \subsubsection{Plano em XZ (Y=constante)}
 
-Um plano é formado por 2 triângulos. Com a informação de 4 pontos é possível desenhar esses triângulos. A figura \ref{p1:fig:p3_planoY} representa um plano em XZ. De notar que é possível considerar dois triângulos: o triângulo formado por [ABC] e o triângulo formado por [CDA]
+Um plano é formado por 2 triângulos. Com a informação de 4 pontos é possível desenhar esses triângulos. A figura \ref{p1:fig:p1_planoY} representa um plano em XZ. De notar que é possível considerar dois triângulos: o triângulo formado por [ABC] e o triângulo formado por [CDA]
 
 \begin{figure}[<+htpb+>]
 	\centering
@@ -93,7 +121,7 @@ Um plano é formado por 2 triângulos. Com a informação de 4 pontos é possív
 	\label{p1:fig:p1_planoY}
 \end{figure}
 
-Estando o plano centrado na origem, e sabendo o comprimento e largura do plano, conclui-se que as coordenadas dos pontos da figura \ref{p1:fig:p3_planoY} são as seguintes:
+Estando o plano centrado na origem, e sabendo o comprimento e largura do plano, conclui-se que as coordenadas dos pontos da figura \ref{p1:fig:p1_planoY} são as seguintes:
 
 \begin{Verbatim}
 A(-comprimento/2, 0, -largura/2)
