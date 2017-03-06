@@ -1,6 +1,11 @@
 \chapter{Motor}
 \label{cap:p2}
 
+O \textit{engine} tem como principal função apresentar o modelo gráfico. Para
+tal utiliza-se a biblioteca \textit{GLUT (OpenGL Utility Toolkit )}, em conjunto com
+a biblioteca gráfica \textit{OpenGL}.
+
+
 \section{Objectivos}
 
 Com o motor pretende-se uma aplicação que seja capaz de ler um conjunto de pontos especificados em ficheiros XML e .3d e os desenhe numa janela. Além desse objetivo principal foi incluída uma câmara esférica em torno do objeto desenhado e um menu simples que permite alterar o modo de visualização dos pontos.
@@ -59,31 +64,23 @@ vector<const char *> leXML() {
 
 Ns ficheiros .3d, cada linha representa um ponto. Em cada linha, existem 3 valores, separados por espaço, correspondentes às coordenadas cartesianas do ponto. É necessário por isso ter uma função que seja capaz de ler os pontos destes ficheiros para que o motor os possa desenhar.
 
-Como referido anteriormente, a função de leitura do XML devolve um vector com os nomes dos ficheiros .3d onde se encontram os pontos a desenhar. Tendo esta lista de ficheiros, o main chama depois a função le3D para cada um dos ficheiros:
+No main está um pedaço de código que permite a leitura destes ficheiros, que recebe como parâmetro o nome de um ficheiro e coloca os pontos do ficheiro num vector de pontos (que é uma variável global). Este vector de pontos será depois o que o motor vai utilizar para desenhar os pontos.
+
+A parte do código que lê o ficheiro XML funciona da seguinte forma:
 
 \begin{Verbatim}
-le3D(const char * ficheiro)
-\end{Verbatim}
 
-Esta função recebe como parâmetro o nome de um ficheiro e coloca os pontos do ficheiro num vector de pontos (que é uma variável global). Este vector de pontos será depois o que o motor vai utilizar para desenhar os pontos.
-
-A função le3D() funciona da seguinte forma:
-
-\begin{Verbatim}
-void le3D(const char * ficheiro) {
-	Abre ficheiro para leitura
-	
-	while (houver linhas para ler) {
-		Coloca numa string o conteudo da linha
-		
-		Lê os conteudos da linha
-		
-		Faz um Ponto3D correspondente à linha
-		
-		Coloca ponto no vector de pontos
-	}
-	
+if(xml = fopen(argv[1],"r")) {
+lê a primeira linha, verifica abertura do scene
+while(consegue ler do xml) {
+procura os model files e guarda os nomes 
 }
+	fclose(xml);
+
+ } else {
+ perror(Impossivel abrir XML);}
+ 
+ 
 \end{Verbatim}
 
 \section{Desenho dos pontos}
@@ -132,33 +129,55 @@ gluLookAt(camara.cCartesianas.x,
 	\item[\textbf{Tecla 'S'}] permite ao utilizador ir para baixo
 	\item[\textbf{Tecla 'A'}] permite ao utilizador ir para a esquerda
 	\item[\textbf{Tecla 'D'}] permite ao utilizador ir para a direita
-	\item[\textbf{Tecla 'Q'}] permite ao utilizador afastar-se do objeto
-	\item[\textbf{Tecla 'E'}] permite ao utilizador aproximar-se do objeto
+	\item[\textbf{Tecla 'Q'}] permite ao utilizador afastar-se  para cima do objeto
+	\item[\textbf{Tecla 'E'}] permite ao utilizador aproximar-se para baixo do objeto
 \end{itemize}
 
 Estas operações traduzem-se em operações sobre a câmara disponibilizadas pela classe \textit{CoordsEsfericas}:
 
 \begin{Verbatim}
-void f_teclas_normais(unsigned char key, int x, int y) {
-	switch (tolower(key)) {
-		case 'w': camara.paraCima(2 * M_PI / 360.0);  
-		break;
-		case 's': camara.paraBaixo(2 * M_PI / 360.0); 
-		break;
-		case 'a': camara.paraEsquerda(2 * M_PI / 360.0);  
-		break;
-		case 'd': camara.paraDireita(2 * M_PI / 360.0); 
-		break;
-		case 'e': camara.aproximar(0.5);
-		break;
-		case 'q': camara.afastar(0.5);
-		break;
-	}
-	glutPostRedisplay();
+void processNormalKeys(unsigned char key, int xx, int yy) {
+
+float fraction = 0.1f;
+
+switch (key) {
+case 'd' :
+angleX += 0.01f;
+lx = sin(angleX);
+lz = -cos(angleX);
+break;
+
+case 'a' :
+angleX -= 0.01f;
+lx = sin(angleX);
+lz = -cos(angleX);
+break;
+
+case 'w' :
+angleY += 0.01f;
+ly = sin(angleY);
+break;
+
+case 's' :
+angleY -= 0.01f;
+ly = sin(angleY);
+break;
+
+case 'q' :
+ycam = (ycam + 0.5);
+break;
+
+case 'e' :
+ycam = (ycam - 0.5);
+break;
 }
+glutPostRedisplay();
+}
+
+
 \end{Verbatim}
 
-O efeito de aplicar uma destas operações é a classe \textit{CoordsEsfericas} actualizar os valores das coordenadas esféricas e cartesianas da nova localização da câmara. Assim, quando a função \textit{gluLookAt()} é chamada e acede aos valores de x, y e z da posição da câmara, estes estão atualizados.
+Quando a função \textit{gluLookAt()} é chamada e acede aos valores de x, y e z da posição da câmara, estes estão atualizados.
 
 \section{Menu}
 
@@ -202,30 +221,11 @@ void menuDrawing(int opt) {
 
 O valor da variável é usado na chamada à função \textit{glPolygonMode()} que se encontra na função \textit{renderScene}:
 
-\begin{Verbatim}
-glPolygonMode(GL_FRONT_AND_BACK, modoPoligonos);
-\end{Verbatim}
 
-\begin{figure}[<+htpb+>]
-	\centering
-	\includegraphics[scale=0.2]{imagens/p1_fill.png}
-	\caption{Exemplo de cone construído no modo GL\_FILL}
-	\label{p1:fig:p1_fill}
-\end{figure}
 
-\begin{figure}[<+htpb+>]
-	\centering
-	\includegraphics[scale=0.2]{imagens/p1_line.png}
-	\caption{Exemplo de cone construído no modo GL\_LINE}
-	\label{p1:fig:p1_line}
-\end{figure}
 
-\begin{figure}[<+htpb+>]
-	\centering
-	\includegraphics[scale=0.2]{imagens/p1_point.png}
-	\caption{Exemplo de cone construído no modo GL\_POINT}
-	\label{p1:fig:p1_point}
-\end{figure}
+
+
 
 
 

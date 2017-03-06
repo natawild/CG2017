@@ -2,29 +2,20 @@
 \contentsline {chapter}{\numberline {1}Introdu\IeC {\c c}\IeC {\~a}o}{1}
 \contentsline {chapter}{\numberline {2}Gerador}{2}
 \contentsline {section}{\numberline {2.1}Funcionamento}{2}
-\contentsline {section}{\numberline {2.2}Algoritmo de Gera\IeC {\c c}\IeC {\~a}o de Pontos}{2}
-\contentsline {section}{\numberline {2.3}Programa principal}{2}
-\contentsline {section}{\numberline {2.4}Primitivas}{4}
-\contentsline {subsection}{\numberline {2.4.1}Gerar Planos}{4}
-\contentsline {subsubsection}{Plano em XZ (Y=constante)}{4}
-\contentsline {subsubsection}{Plano em XY (Z=constante)}{5}
-\contentsline {subsubsection}{Plano em YZ (X=constante)}{7}
-\contentsline {subsection}{\numberline {2.4.2}Gerar Caixa}{8}
-\contentsline {subsection}{\numberline {2.4.3}Gerar C\IeC {\'\i }rculo}{11}
-\contentsline {subsection}{\numberline {2.4.4}Gerar Cone}{13}
-\contentsline {subsection}{\numberline {2.4.5}Gerar Esfera}{16}
-\contentsline {chapter}{\numberline {3}Gerador1}{18}
-\contentsline {section}{\numberline {3.1}Ponto3D}{18}
-\contentsline {section}{\numberline {3.2}CoordsPolares}{19}
-\contentsline {section}{\numberline {3.3}CoordsEsfericas}{20}
-\contentsline {section}{\numberline {3.4}Figura}{23}
-\contentsline {section}{\numberline {3.5}TinyXML-2}{23}
-\contentsline {chapter}{\numberline {4}Motor}{24}
-\contentsline {section}{\numberline {4.1}Objectivos}{24}
-\contentsline {section}{\numberline {4.2}Leitura Ficheiros}{24}
-\contentsline {subsection}{\numberline {4.2.1}Ficheiro XML}{24}
-\contentsline {subsection}{\numberline {4.2.2}Ficheiros .3d}{25}
-\contentsline {section}{\numberline {4.3}Desenho dos pontos}{25}
-\contentsline {section}{\numberline {4.4}C\IeC {\^a}mara}{26}
-\contentsline {section}{\numberline {4.5}Menu}{27}
-\contentsline {chapter}{\numberline {5}Conclus\IeC {\~a}o}{29}
+\contentsline {section}{\numberline {2.2}Algoritmo de Gera\IeC {\c c}\IeC {\~a}o de Pontos}{3}
+\contentsline {subsection}{\numberline {2.2.1}Gerar Planos}{3}
+\contentsline {subsubsection}{Plano em XZ (Y=constante)}{3}
+\contentsline {subsubsection}{Plano em XY (Z=constante)}{4}
+\contentsline {subsubsection}{Plano em YZ (X=constante)}{4}
+\contentsline {subsection}{\numberline {2.2.2}Gerar Caixa}{6}
+\contentsline {subsection}{\numberline {2.2.3}Gerar Cone}{7}
+\contentsline {subsection}{\numberline {2.2.4}Gerar Esfera}{10}
+\contentsline {chapter}{\numberline {3}Motor}{12}
+\contentsline {section}{\numberline {3.1}Objectivos}{12}
+\contentsline {section}{\numberline {3.2}Leitura Ficheiros}{12}
+\contentsline {subsection}{\numberline {3.2.1}Ficheiro XML}{12}
+\contentsline {subsection}{\numberline {3.2.2}Ficheiros .3d}{13}
+\contentsline {section}{\numberline {3.3}Desenho dos pontos}{13}
+\contentsline {section}{\numberline {3.4}C\IeC {\^a}mara}{14}
+\contentsline {section}{\numberline {3.5}Menu}{15}
+\contentsline {chapter}{\numberline {4}Conclus\IeC {\~a}o}{17}
