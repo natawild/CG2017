@@ -8,7 +8,7 @@ a biblioteca gráfica \textit{OpenGL}.
 
 \section{Objectivos}
 
-Com o motor pretende-se uma aplicação que seja capaz de ler um conjunto de pontos especificados em ficheiros XML e .3d e os desenhe numa janela. Além desse objetivo principal foi incluída uma câmara esférica em torno do objeto desenhado e um menu simples que permite alterar o modo de visualização dos pontos.
+Com o motor pretende-se uma aplicação que seja capaz de ler um conjunto de pontos especificados em ficheiros XML e .3d e os desenhe numa janela. Além desse objetivo principal foi incluída uma câmara em torno do objeto desenhado e um menu simples que permite alterar o modo de visualização dos pontos.
 
 Nesta secção apresenta-se de que forma o motor foi desenvolvido, começando-se por explicar a leitura dos ficheiros
 
@@ -23,13 +23,7 @@ A estrutura do ficheiro XML contempla apenas dois tipos de elementos:
 	\item[\textbf{model}] - elemento com 1 atributo \textit{file} cujo valor corresponde ao nome de um ficheiro de pontos
 \end{itemize}
 
-A leitura do ficheiro XML é feita pela função:
 
-\begin{Verbatim}
-vector<const char *> leXML()
-\end{Verbatim}
-
-O valor de retorno da função é um vector de \textit{char *} que contém os nomes dos ficheiros a ser lidos.
 
 O pseudo-codigo da função de leitura do XML pode ser expresso da seguinte forma:
 
@@ -85,16 +79,20 @@ procura os model files e guarda os nomes
 
 \section{Desenho dos pontos}
 
-O resultado da leitura do XML e dos ficheiros .3d nele especificados é um conjunto de \textit{Pontos3D} que são armazenados numa variável global. Este conjunto de pontos está implementado sobre a forma de um \textit{vector<Ponto3D>} que é uma variável global ao programa.
+O resultado da leitura do XML e dos ficheiros .3d nele especificados é um conjunto de \textit{Ponto3D} que são armazenados numa variável global. Este conjunto de pontos está implementado sobre a forma de um \textit{array<sPonto3D>} que é uma variável global ao programa.
 
-A ordem pela qual os pontos aparecem no vector é a ordem pela qual apareceram nos ficheiros, que por sua vez é a ordem pela qual deverão ser desenhados. Nesta situação, desenhar os pontos corresponde simplesmente a percorrer todos os pontos colocados no vector e a pedir ao GLUT para os desenhar. Mostra-se um excerto de código da função renderScene() que corresponde ao desenho dos pontos:
+A ordem pela qual os pontos aparecem no vector é a ordem pela qual apareceram nos ficheiros, que por sua vez é a ordem pela qual deverão ser desenhados. Nesta situação, desenhar os pontos corresponde simplesmente a percorrer todos os pontos colocados no vector e a pedir ao GLUT para os desenhar. Mostra-se um excerto de código da função \textit{renderScene()} que corresponde ao desenho dos pontos:
 
 \begin{Verbatim}
+
 glBegin(GL_TRIANGLES);
 glColor3f(0.0, 0.0, 1.0);
-for (auto it = pontos.begin(); it != pontos.end(); ++it) {
-	glVertex3f(it->x, it->y, it->z);
+
+for(i = 0;i < _buffer_size;i++){
+glVertex3f(_buffer_pontos[i].x,_buffer_pontos[i].y,
+_buffer_pontos[i].z);
 }
+
 glEnd();
 \end{Verbatim}
 
@@ -102,24 +100,15 @@ Assume-se que os ficheiros .3d já contêm a ordem correta dos pontos a ser dese
 
 \section{Câmara}
 
-Para se poder ver o objeto desenhado de vários ângulos foi implementada uma câmara colocada sobre uma esfera. Visto que a posição da câmara é um ponto numa esfera, foram usadas coordendas esféricas para gerir o movimento da câmara.
+Para se poder ver o objeto desenhado de vários ângulos foi implementada uma câmara.  Visto que a posição da câmara é ------ para gerir o movimento da câmara.
 
-Na secção \ref{p1:cEsfericas} foi apresentada a classe \textit{CoordsEsfericas} que permite torna fácil operações sobre este tipo de coordenadas e respectiva conversão para coordenas cartesianas. Por este motivo, esta classe é ideal para auxiliar a implementação da câmara.
 
-A câmara é representada por uma variável global declarada da seguinte forma:
-
-\begin{Verbatim}
-CoordsEsfericas camara;
-\end{Verbatim}
-
-À função \textit{gluLookAt()} são passadas as coordenadas cartesianas correspondentes às coordenadas esféricas:
+À função \textit{gluLookAt()} são passadas -----
 
 \begin{Verbatim}
-gluLookAt(camara.cCartesianas.x,
-	camara.cCartesianas.y,
-	camara.cCartesianas.z,
-	0.0, 0.0, 0.0,
-	0.0f, 1.0f, 0.0f);
+gluLookAt(xcam, ycam, zcam,
+xcam+lx, ycam+ly,  zcam+lz,
+0.0f, 1.0f,  0.0f);
 \end{Verbatim}
 
 É possível ao utilizador mudar a posição da câmara. Os controlos são os seguintes:
@@ -183,43 +172,24 @@ Quando a função \textit{gluLookAt()} é chamada e acede aos valores de x, y e 
 
 Para proporcionar alguma flexibilidade na visualização das figuras desenhadas foi incluído um menu que permite ao utilizador alternar entre o modo de visualização de pontos, linhas, ou objeto preenchido:
 
-\begin{figure}[<+htpb+>]
-	\centering
-	\includegraphics[scale=1.0]{imagens/p1_menuOpcoes.png}
-	\caption{Menu de opções de visualização. Acessível com clique no botão direito do rato}
-	\label{p1:fig:p1_menuOpcoes}
-\end{figure}
 
 O menu foi construído da seguinte forma:
 
 \begin{Verbatim}
-glutCreateMenu(menuDrawing);
-glutAttachMenu(GLUT_RIGHT_BUTTON);
 glutAddMenuEntry("FILL", 0);
 glutAddMenuEntry("LINE", 1);
 glutAddMenuEntry("POINT", 2);
+
+case 'f' :
+_polygon_mode = GL_FILL;
+break;
+case 'g' :
+_polygon_mode = GL_LINE;
+break;
+case 'h' :
+_polygon_mode = GL_POINT;
+break;
 \end{Verbatim}
-
-O modo de visualização é controlado por uma variável global:
-
-\begin{Verbatim}
-GLenum modoPoligonos;
-\end{Verbatim}
-
-Quando o utilizador escolhe uma das opções, esta variável é modificada:
-
-\begin{Verbatim}
-void menuDrawing(int opt) {
-	switch (opt) {
-		case 0: modoPoligonos = GL_FILL; break;
-		case 1:  modoPoligonos = GL_LINE; break;
-		case 2:  modoPoligonos = GL_POINT; break;
-	}
-	glutPostRedisplay();
-}
-\end{Verbatim}
-
-O valor da variável é usado na chamada à função \textit{glPolygonMode()} que se encontra na função \textit{renderScene}:
 
 
 

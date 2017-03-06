@@ -28,16 +28,17 @@ Para a criação das formas geométricas é preciso obedecer a algumas restriç�
 com a passagem de argumentos, o primeiro parâmetro a ser passado deverá
 ser o nome da figura a desenhar, o último será o nome do ficheiro onde será
 guardada a lista de pontos, sendo a extensão “.3d” adicionada automaticamente
-pelo generator. Sendo isto obedecido, o número de argumentos entre
+pelo \textit{generator}. Sendo isto obedecido, o número de argumentos entre
 o nome da figura e o nome do ficheiro varia consoante o tipo de figura a ser
 criada, mas esses argumentos deverão ser numerais.
 
 \newpage
 
 \section{Algoritmo de Geração de Pontos}
-\label{gp:plano}
+
 
 \subsection{Gerar Planos}
+\label{gp:plano}
 
 \subsubsection{Plano em XZ (Y=constante)}
 
@@ -72,10 +73,13 @@ De notar que esta função além do comprimento e largura, recebe ainda o centro
 
 \begin{figure}[<+htpb+>]
 	\centering
-	\includegraphics[scale=0.5]{imagens/p3_plano_4_2.png}
-	\caption{Exemplo de plano em XZ gerado, com 4 de comprimento e 2 de largura}
+	\includegraphics[scale=0.5]{imagens/p3_plano.png}
+	\caption{Exemplo de plano em XZ gerado}
 	\label{p1:fig:p3_plano_4_2}
 \end{figure}
+
+
+\newpage
 
 \subsubsection{Plano em XY (Z=constante)}
 
@@ -104,12 +108,10 @@ P(0,0,0)
 A ordem pela qual se adiciona os pontos à figura determina para que lado ela fica virada. Se quisermos que o plano fique virado para o sentido positivo do eixo dos Y, deve-se colocar os pontos pela seguinte ordem: A-B-D (1º triângulo), seguido de D-B-C (2º triângulo). Se quisermos que o plano fique virado para o sentido negativo do eixo dos Y, deve-se colocar os pontos pela seguinte ordem: C-B-D (1º triângulo), seguido de D-B-A (2º triângulo).
 
 
-
 \subsubsection{Plano em YZ (X=constante)}
 
 Embora apenas fosse pedido que o gerador tivesse a capacidade de gerar um plano em XZ, considerou-se útil disponibilizar também uma primitiva para criar planos em YZ.
 
-\newpage
 Um plano é formado por 2 triângulos. Com a informação de 4 pontos é possível desenhar esses triângulos. A figura \ref{p1:fig:p3_planoZ} representa um plano em YZ. De notar que é possível considerar dois triângulos: o triângulo formado por [ ABC ] e o triângulo formado por [ DAC ].
 
 \begin{figure}[<+htpb+>]
@@ -131,8 +133,9 @@ P(0,0,0)
 
 
 A ordem pela qual se adiciona os pontos à figura determina para que lado ela fica virada. Se quisermos que o plano fique virado para o sentido positivo do eixo dos Y, deve-se colocar os pontos pela seguinte ordem: A-B-C (1º triângulo), seguido de D-A-C (2º triângulo). Se quisermos que o plano fique virado para o sentido negativo do eixo dos Y, deve-se colocar os pontos pela seguinte ordem: C-A-D (1º triângulo), seguido de C-B-A (2º triângulo).
+\\
 
-A função responsável por implementar estes algoritmos é a função \textit{drawPlane\_Points()}, isto é os quando queremos desenhar em ordem a um plano, esse plano tem valor zero, cujo pseudo-código se apresenta de seguida:
+A função responsável por implementar estes algoritmos é a função \textit{drawPlane\_Points()}, que funciona do seguinte modo: quando queremos desenhar em ordem a um plano, esse plano tem valor zero, cujo pseudo-código se apresenta de seguida:
 
 \begin{Verbatim}
 drawPlane_Points(float sizeX, float sizeY, float sizeZ, 
@@ -159,7 +162,7 @@ return número de pontos calculados;
 \subsection{Gerar Caixa}
 
 
-Na secção \ref{gp:plano} foram apresentadas as primitivas que permitiam fazer planos. Nomeadamente viu-se que essas primitivas permitiam geral planos em XY, YZ e XZ dado um centro e uma orientação.
+Na secção \ref{gp:plano} foram apresentadas as primitivas que permitiam fazer planos. Nomeadamente viu-se que essas primitivas permitiam gerar planos em XY, YZ e XZ dado um centro e uma orientação.
 
 Uma caixa é apenas um conjunto de planos. Assim, para gerar a caixa o que se fez foi gerar os seus planos usando as primitivas da secção \ref{gp:plano}. No entanto, para usar tais primitivas é necessário indicar um centro do plano e uma orientação para o mesmo. É por isso necessário calcular esses parâmetros antes de usar as primitivas dos planos.
 
@@ -184,15 +187,17 @@ Centro C  = (0,0,comprimento/2)     Orientação = 0
 Centro C' = (0,0,-comprimento/2)    Orientação = 1
 \end{Verbatim}
 
+\newpage
 
 
-A função responsável por gerar os pontos de uma caixa é a função \textit{drawBox\_Points)} cujo pseudo-código se apresenta a seguir:
+A função responsável por gerar os pontos de uma caixa é a função \textit{drawBox\_Points()} cujo pseudo-código se apresenta a seguir:
 
 \begin{Verbatim}
 
 
 drawBox_Points(float sizeX, float sizeY, float sizeZ, 
-float centerX, float centerY, float centerZ, int divisions, Ponto3D points){
+float centerX, float centerY, float centerZ, int divisions, 
+Ponto3D points){
 
 Calcula coordendas centro A
 Cria plano com centro em A e orientacao = 0
@@ -219,8 +224,8 @@ return número de ponto que calculou para fazer a caixa;
 
 \begin{figure}[<+htpb+>]
 	\centering
-	\includegraphics[scale=0.5]{imagens/p3_caixa_6_3_4.png}
-	\caption{Exemplo de caixa gerada, com 6 de comprimento, 3 de largura e 4 de altura}
+	\includegraphics[scale=0.5]{imagens/p3_caixa_10.png}
+	\caption{Exemplo de caixa gerada}
 	\label{p1:fig:p3_caixa_6_3_4}
 \end{figure}
 
@@ -228,12 +233,10 @@ return número de ponto que calculou para fazer a caixa;
 
 \subsection{Gerar Cone}
 
+Para gerar os pontos do cone, primeiro é necessário desenhar os pontos da camada do topo do cone, estes que serão a primeira camada constituida apenas por triângulos. 
 
-A função \textit{drawCone\_Points()} permite fazer isto.
 
-.......................
-
- Resta apenas gerar os pontos para a superfície ``curva'' do cone. Para essa superfício, abordagem seguida foi a de fazer o cone camada a camada. As fatias partem cada camada numa espécie ``rectângulos'' como o que se mostra na figura \ref{p1:fig:p3_seccaoCone_edit}.
+De seguida é necessário gerar os pontos para a superfície ``curva'' do cone. Para essa superfício, abordagem seguida foi a de fazer o cone camada a camada. As fatias partem cada camada numa espécie ``rectângulos'' como o que se mostra na figura \ref{p1:fig:p3_seccaoCone_edit}.
 
 
 \begin{figure}[<+htpb+>]
@@ -243,34 +246,52 @@ A função \textit{drawCone\_Points()} permite fazer isto.
 	\label{p1:fig:p3_seccaoCone_edit}
 \end{figure}
 
-Ou seja, é possível construir uma fatia de uma dada camada com os pontos A,B,C e D. É no entanto necessário saber as coordenadas destes pontos. Para tal, foram usadas coordenadas polares. Podemos ver os pontos A e D como pertencentes a um mesmo círculo, com centro no centro do cone. Da mesma forma, também os pontos B e C se encontram num mesmo círculo, com raio maior do que o círculo onde estão os pontos A e D. O raio dos dois círculos em que estes dois conjuntos de pontos se encontram difere, no entanto é fácil perceber que o raio do círculo depende da camada que se está a considerar. Por exemplo, se virmos a base do cone como um círculo de raio $r$, então o círculo correspondente à camada de cima terá raio $r - (r/camadas)$. A figura \ref{p1:fig:p3_conePerfil} pretende ilustrar tal situação para um exemplo de 3 camadas.
+Ou seja, é possível construir uma fatia de uma dada camada com os pontos A,B,C e D. É no entanto necessário saber as coordenadas destes pontos. Para tal, foram usadas coordenadas polares. Podemos ver os pontos A e D como pertencentes a um mesmo círculo, com centro no centro do cone. Da mesma forma, também os pontos B e C se encontram num mesmo círculo, com raio maior do que o círculo onde estão os pontos A e D. O raio dos dois círculos em que estes dois conjuntos de pontos se encontram difere, no entanto o raio do círculo depende da camada que se está a considerar. 
+
+
+Por exemplo, se virmos a base do cone como um círculo de raio $Raio$, à medida que o valor de $Altura$ aumenta, ou seja, à medida que subimos no cone, o $Raio$ das novas circunferências vai sendo cada vez menor.
+Quando $Altura$ for igual ao valor de $d$ o raio da nova circunferência é
+0, ou seja, é apenas o ponto do topo do cone.  A figura \ref{p1:fig:p3_conePerfil} pretende ilustrar tal situação. 
 
 \begin{figure}[<+htpb+>]
 	\centering
 	\includegraphics[scale=0.5]{imagens/p3_conePerfil.png}
-	\caption{O círculo da camada superior à que se considera tem sempre raio $r - (r/camadas)$}
+	\caption{Cálculo da altura de cada camada do cone $d = (altura/camadas)$}
 	\label{p1:fig:p3_conePerfil}
 \end{figure}
 
-Saber o centro de cada um dos círculos do cone também é simples. Os centros dos círculos encontram-se todos no centro do cone, a única coisa que varia em cada um é a coordenada Y cuja diferença para a coordenada Y da camada anterior é $altura / camadas$.
-
-
+A função \textit{drawCone\_Points} permite desenhar um cone e o seu pseudo-código é mostrado de seguida: 
 
 \begin{Verbatim}
 
-int drawCone_Points(float radius, float height, float centerX, 
-float centerY, float centerZ, int slices, int stacks, Ponto3D points){
+drawCone_Points(float radius, float height, float centerX, 
+float centerY, float centerZ, int slices, int stacks, 
+Ponto3D points){
 
-for(i = 0;i < slices; i++)
-Desenhar os triangulos da cimo do cone
+sinAlpha = radius / height;//calcula os raios das diferentes stacks;
 
-for(i = 2;i <= stacks;i++)
+divBeta = (360.0f / (float) slices) * M_PI / 180.0f;//tamanho do 
+ângulo para cada slice
+
+d = height / (float) stacks; // altura de cada stack do cone
+
+for(i = 1;i < slices;i++)
+	Calcula ângulos no plano paralelo a XZ (chao);
+	
+for(i = 0;i < slices; i++)	{
+	Desenha os triângulos do topo do cone 
+}
+
+
+for(i = 2;i <= stacks;i++){
 	for(j = 0;j < slices;j++){
 		Desenha os quadradros até à base do cone
 	}
+}
 	
-	for(i = 0; i < slices; i++)
+for(i = 0; i < slices; i++){
 	Desenha o circulo (base do cone)
+	}
 }
 
 \end{Verbatim}
@@ -278,14 +299,14 @@ for(i = 2;i <= stacks;i++)
 
 \begin{figure}[<+htpb+>]
 	\centering
-	\includegraphics[scale=0.5]{imagens/p3_cone_2_3_10_10.png}
-	\caption{Exemplo de cone gerado, com 2 de raio de base, 3 de altura, 10 camadas e 10 fatias}
+	\includegraphics[scale=0.5]{imagens/print_cone_raio1-5_altura4_slices75_stacks75}
+	\caption{Exemplo de cone gerado com raio 1.5,altura 4, 75 fatias, 75 camadas}
 	\label{p1:fig:p3_cone_2_3_10_10}
 \end{figure}
 
+
 \newpage
 \subsection{Gerar Esfera}
-
 
 À semelhança do cone também para a esfera é possível gerar uma fatia de uma determinada camada usando 4 pontos conforme mostrado na figura \ref{p1:fig:p3_esferaSeccao_edit}.
 
@@ -296,11 +317,25 @@ for(i = 2;i <= stacks;i++)
 	\label{p1:fig:p3_esferaSeccao_edit}
 \end{figure}
 
-Também para a esfera a abordagem seguida foi a de construir camada a camada, começando pela camada de cima. A determinação das coordenadas dos pontos A, B, C e D é simples. 
+Também para a esfera a abordagem seguida foi a de construir camada a camada, começando pelos topos na direção do eixo dos YY e o centro paralelo ao plano XZ. 
+O centro da esfera é o ponto de coordenadas (0, 0, 0) e vão ser necessários dois ângulos diferentes para conseguir desenhar os triângulos que ligam as diferentes circunferências.
+
+Utiliza-se um arco no plano XY divido em partes iguais, dependendo do
+número de stacks. O ângulo dentro desse arco será $\beta$ e para cada um dos
+valores de $\alpha$ é possível obter o valor de y para a nova circunferência assim
+como o raio da mesma.
+Cada uma das circunferências vai ser dividida em partes iguais, dependendo
+do número de slices. Para calcular os diferentes pontos dentro da
+circunferˆencia utiliza-se um ângulo  $\alpha$ e, para cada um dos pontos criam-se
+dois triângulos ligados à circunferência imediatamente abaixo, um à direita
+do ponto atual e outro à esquerda. 
 
 
+Tal como no cone a criação dos arrays com os ângulos todos, as fatias  e as camadas sendo que os iniciais sao predefinidos
+, os angulos alpha (do Norte ao sul) começam em 90 e vao até -90, i.e., $\pi /2 $e vão até $-\pi /2 $
+ 
 
-que forma variam os ângulos polar e azimuth entre camadas e fatias. Ora, tendo $c$ camadas, sabe-se que a diferença em termos de ângulo polar de um ponto que esteja numa camada superior para outro que esteja numa camada imediatamente inferior é de $\pi / c$. Por outro lado, se considerarmos $f$ fatias, a diferença do ângulo azimuth de um ponto para outro que esteja numa fatia imediatamente a seguir é de $(2 \times \pi) / f$. Assim temos o seguinte pseudo-código:
+Assim temos o seguinte pseudo-código:
 
 \begin{Verbatim}
 
@@ -328,8 +363,8 @@ Desenha quadrados para completar o resto da esfera
 
 \begin{figure}[<+htpb+>]
 	\centering
-	\includegraphics[scale=0.5]{imagens/p3_esfera_2_20_20.png}
-	\caption{Exemplo de esfera gerada, com 2 de raio, 20 camadas e 20 fatias}
+	\includegraphics[scale=0.5]{imagens/p3_esfera_2_75_75.png}
+	\caption{Exemplo de esfera gerada com raio 2, 75 camadas e 75 fatias}
 	\label{p1:fig:p3_esfera_2_20_20}
 \end{figure}
 
