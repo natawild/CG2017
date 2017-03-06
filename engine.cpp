@@ -69,17 +69,17 @@ void processSpecialKeys(int key, int xx, int yy) {
 	float fraction = 0.1f;
 
 	switch (key) {
-		case GLUT_KEY_LEFT :
+		case GLUT_KEY_LEFT : //straff arrasta a camara para a esquerda 
 			xcam = (xcam - 0.5);
 			break;
-		case GLUT_KEY_RIGHT :
+		case GLUT_KEY_RIGHT : //arrasta a camara para a direita
 			xcam = (xcam + 0.5);
 			break;
-		case GLUT_KEY_UP :
+		case GLUT_KEY_UP : //zoom in 
 			xcam += lx * fraction;
 			zcam += lz * fraction;
 			break;
-		case GLUT_KEY_DOWN :
+		case GLUT_KEY_DOWN : // zoom out 
 			xcam -= lx * fraction;
 			zcam -= lz * fraction;
 			break;
@@ -92,7 +92,7 @@ void processNormalKeys(unsigned char key, int xx, int yy) {
 	float fraction = 0.1f;
 
 	switch (key) {
-		case 'd' :
+		case 'd' : // muda o angulo para onde estamos a olhar, não muda a camara de sitio 
 			angleX += 0.01f;
 			lx = sin(angleX);
 			lz = -cos(angleX);
@@ -110,10 +110,10 @@ void processNormalKeys(unsigned char key, int xx, int yy) {
 			angleY -= 0.01f;
 			ly = sin(angleY);
 			break;
-		case 'q' :
+		case 'q' : //arrasta a camara para cima
 			ycam = (ycam + 0.5);
 			break;
-		case 'e' :
+		case 'e' : //arrasta a camara para baixo 
 			ycam = (ycam - 0.5);
 			break;
 		case 'f' :
@@ -147,13 +147,6 @@ void renderScene(void) {
 
 	glPolygonMode(GL_FRONT_AND_BACK, _polygon_mode);
 
-	glBegin(GL_TRIANGLES);
-		glColor3f(0.0, 0.0, 1.0);
-
-	for(i = 0;i < _buffer_size;i++)
-	{
-		glVertex3f(_buffer_pontos[i].x,_buffer_pontos[i].y,_buffer_pontos[i].z);
-	}
 	/*for (auto it = pontos.begin(); it != pontos.end(); ++it) {
 		glVertex3f(it->x, it->y, it->z);
 	}
@@ -217,7 +210,7 @@ int main(int argc, char **argv) {
 			perror("read file error");
 		}
 	}
-
+	//le os pontos e passa para um array de pontos global 
 	while(j < i) {
 		if(f = fopen(files[j],"r")) {
 			if(fscanf(f,"%d",&verts)) {

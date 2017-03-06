@@ -1,0 +1,221 @@
+﻿  generator.cpp
+c:\users\célia figueiredo\documents\github\cg2017\generator.cpp(38): error C2131: expression did not evaluate to a constant
+  c:\users\célia figueiredo\documents\github\cg2017\generator.cpp(38): note: failure was caused by non-constant arguments or reference to a non-constant symbol
+  c:\users\célia figueiredo\documents\github\cg2017\generator.cpp(38): note: see usage of 'n'
+c:\users\célia figueiredo\documents\github\cg2017\generator.cpp(40): error C3863: array type 'float [n]' is not assignable
+c:\users\célia figueiredo\documents\github\cg2017\generator.cpp(50): error C3863: array type 'float [n]' is not assignable
+c:\users\célia figueiredo\documents\github\cg2017\generator.cpp(51): error C3863: array type 'float [n]' is not assignable
+c:\users\célia figueiredo\documents\github\cg2017\generator.cpp(52): error C3863: array type 'float [n]' is not assignable
+c:\users\célia figueiredo\documents\github\cg2017\generator.cpp(59): error C2664: 'sPonto3D setPoint(float,float,float)': cannot convert argument 1 from 'float [n]' to 'float'
+  c:\users\célia figueiredo\documents\github\cg2017\generator.cpp(59): note: There is no context in which this conversion is possible
+c:\users\célia figueiredo\documents\github\cg2017\generator.cpp(60): error C2664: 'sPonto3D setPoint(float,float,float)': cannot convert argument 1 from 'float [n]' to 'float'
+  c:\users\célia figueiredo\documents\github\cg2017\generator.cpp(60): note: There is no context in which this conversion is possible
+c:\users\célia figueiredo\documents\github\cg2017\generator.cpp(61): error C2664: 'sPonto3D setPoint(float,float,float)': cannot convert argument 1 from 'float [n]' to 'float'
+  c:\users\célia figueiredo\documents\github\cg2017\generator.cpp(61): note: There is no context in which this conversion is possible
+c:\users\célia figueiredo\documents\github\cg2017\generator.cpp(62): error C2664: 'sPonto3D setPoint(float,float,float)': cannot convert argument 1 from 'float [n]' to 'float'
+  c:\users\célia figueiredo\documents\github\cg2017\generator.cpp(62): note: There is no context in which this conversion is possible
+c:\users\célia figueiredo\documents\github\cg2017\generator.cpp(63): error C2664: 'sPonto3D setPoint(float,float,float)': cannot convert argument 1 from 'float [n]' to 'float'
+  c:\users\célia figueiredo\documents\github\cg2017\generator.cpp(63): note: There is no context in which this conversion is possible
+c:\users\célia figueiredo\documents\github\cg2017\generator.cpp(64): error C2664: 'sPonto3D setPoint(float,float,float)': cannot convert argument 1 from 'float [n]' to 'float'
+  c:\users\célia figueiredo\documents\github\cg2017\generator.cpp(64): note: There is no context in which this conversion is possible
+c:\users\célia figueiredo\documents\github\cg2017\generator.cpp(76): error C2664: 'sPonto3D setPoint(float,float,float)': cannot convert argument 1 from 'float [n]' to 'float'
+  c:\users\célia figueiredo\documents\github\cg2017\generator.cpp(76): note: There is no context in which this conversion is possible
+c:\users\célia figueiredo\documents\github\cg2017\generator.cpp(77): error C2664: 'sPonto3D setPoint(float,float,float)': cannot convert argument 1 from 'float [n]' to 'float'
+  c:\users\célia figueiredo\documents\github\cg2017\generator.cpp(77): note: There is no context in which this conversion is possible
+c:\users\célia figueiredo\documents\github\cg2017\generator.cpp(78): error C2664: 'sPonto3D setPoint(float,float,float)': cannot convert argument 1 from 'float [n]' to 'float'
+  c:\users\célia figueiredo\documents\github\cg2017\generator.cpp(78): note: There is no context in which this conversion is possible
+c:\users\célia figueiredo\documents\github\cg2017\generator.cpp(79): error C2664: 'sPonto3D setPoint(float,float,float)': cannot convert argument 1 from 'float [n]' to 'float'
+  c:\users\célia figueiredo\documents\github\cg2017\generator.cpp(79): note: There is no context in which this conversion is possible
+c:\users\célia figueiredo\documents\github\cg2017\generator.cpp(80): error C2664: 'sPonto3D setPoint(float,float,float)': cannot convert argument 1 from 'float [n]' to 'float'
+  c:\users\célia figueiredo\documents\github\cg2017\generator.cpp(80): note: There is no context in which this conversion is possible
+c:\users\célia figueiredo\documents\github\cg2017\generator.cpp(81): error C2664: 'sPonto3D setPoint(float,float,float)': cannot convert argument 1 from 'float [n]' to 'float'
+  c:\users\célia figueiredo\documents\github\cg2017\generator.cpp(81): note: There is no context in which this conversion is possible
+c:\users\célia figueiredo\documents\github\cg2017\generator.cpp(133): error C2131: expression did not evaluate to a constant
+  c:\users\célia figueiredo\documents\github\cg2017\generator.cpp(133): note: failure was caused by non-constant arguments or reference to a non-constant symbol
+  c:\users\célia figueiredo\documents\github\cg2017\generator.cpp(133): note: see usage of 'slices'
+c:\users\célia figueiredo\documents\github\cg2017\generator.cpp(139): warning C4244: '=': conversion from 'double' to 'float', possible loss of data
+c:\users\célia figueiredo\documents\github\cg2017\generator.cpp(143): error C3863: array type 'float [slices+]' is not assignable
+c:\users\célia figueiredo\documents\github\cg2017\generator.cpp(144): error C3863: array type 'float [slices+]' is not assignable
+c:\users\célia figueiredo\documents\github\cg2017\generator.cpp(146): error C3863: array type 'float [slices+]' is not assignable
+c:\users\célia figueiredo\documents\github\cg2017\generator.cpp(156): error C2664: 'double cos(double)': cannot convert argument 1 from 'float [slices+]' to 'double'
+  c:\users\célia figueiredo\documents\github\cg2017\generator.cpp(156): note: There is no context in which this conversion is possible
+c:\users\célia figueiredo\documents\github\cg2017\generator.cpp(156): error C2664: 'double sin(double)': cannot convert argument 1 from 'float [slices+]' to 'double'
+  c:\users\célia figueiredo\documents\github\cg2017\generator.cpp(156): note: There is no context in which this conversion is possible
+c:\users\célia figueiredo\documents\github\cg2017\generator.cpp(156): error C2660: 'setPoint': function does not take 2 arguments
+c:\users\célia figueiredo\documents\github\cg2017\generator.cpp(157): error C2664: 'double cos(double)': cannot convert argument 1 from 'float [slices+]' to 'double'
+  c:\users\célia figueiredo\documents\github\cg2017\generator.cpp(157): note: There is no context in which this conversion is possible
+c:\users\célia figueiredo\documents\github\cg2017\generator.cpp(157): error C2664: 'double sin(double)': cannot convert argument 1 from 'float [slices+]' to 'double'
+  c:\users\célia figueiredo\documents\github\cg2017\generator.cpp(157): note: There is no context in which this conversion is possible
+c:\users\célia figueiredo\documents\github\cg2017\generator.cpp(157): error C2660: 'setPoint': function does not take 2 arguments
+c:\users\célia figueiredo\documents\github\cg2017\generator.cpp(181): error C2664: 'double cos(double)': cannot convert argument 1 from 'float [slices+]' to 'double'
+  c:\users\célia figueiredo\documents\github\cg2017\generator.cpp(181): note: There is no context in which this conversion is possible
+c:\users\célia figueiredo\documents\github\cg2017\generator.cpp(181): error C2664: 'double sin(double)': cannot convert argument 1 from 'float [slices+]' to 'double'
+  c:\users\célia figueiredo\documents\github\cg2017\generator.cpp(181): note: There is no context in which this conversion is possible
+c:\users\célia figueiredo\documents\github\cg2017\generator.cpp(181): error C2660: 'setPoint': function does not take 2 arguments
+c:\users\célia figueiredo\documents\github\cg2017\generator.cpp(182): error C2664: 'double cos(double)': cannot convert argument 1 from 'float [slices+]' to 'double'
+  c:\users\célia figueiredo\documents\github\cg2017\generator.cpp(182): note: There is no context in which this conversion is possible
+c:\users\célia figueiredo\documents\github\cg2017\generator.cpp(182): error C2664: 'double sin(double)': cannot convert argument 1 from 'float [slices+]' to 'double'
+  c:\users\célia figueiredo\documents\github\cg2017\generator.cpp(182): note: There is no context in which this conversion is possible
+c:\users\célia figueiredo\documents\github\cg2017\generator.cpp(182): error C2660: 'setPoint': function does not take 2 arguments
+c:\users\célia figueiredo\documents\github\cg2017\generator.cpp(183): error C2664: 'double cos(double)': cannot convert argument 1 from 'float [slices+]' to 'double'
+  c:\users\célia figueiredo\documents\github\cg2017\generator.cpp(183): note: There is no context in which this conversion is possible
+c:\users\célia figueiredo\documents\github\cg2017\generator.cpp(183): error C2664: 'double sin(double)': cannot convert argument 1 from 'float [slices+]' to 'double'
+  c:\users\célia figueiredo\documents\github\cg2017\generator.cpp(183): note: There is no context in which this conversion is possible
+c:\users\célia figueiredo\documents\github\cg2017\generator.cpp(183): error C2660: 'setPoint': function does not take 2 arguments
+c:\users\célia figueiredo\documents\github\cg2017\generator.cpp(184): error C2664: 'double cos(double)': cannot convert argument 1 from 'float [slices+]' to 'double'
+  c:\users\célia figueiredo\documents\github\cg2017\generator.cpp(184): note: There is no context in which this conversion is possible
+c:\users\célia figueiredo\documents\github\cg2017\generator.cpp(184): error C2664: 'double sin(double)': cannot convert argument 1 from 'float [slices+]' to 'double'
+  c:\users\célia figueiredo\documents\github\cg2017\generator.cpp(184): note: There is no context in which this conversion is possible
+c:\users\célia figueiredo\documents\github\cg2017\generator.cpp(184): error C2660: 'setPoint': function does not take 2 arguments
+c:\users\célia figueiredo\documents\github\cg2017\generator.cpp(185): error C2664: 'double cos(double)': cannot convert argument 1 from 'float [slices+]' to 'double'
+  c:\users\célia figueiredo\documents\github\cg2017\generator.cpp(185): note: There is no context in which this conversion is possible
+c:\users\célia figueiredo\documents\github\cg2017\generator.cpp(185): error C2664: 'double sin(double)': cannot convert argument 1 from 'float [slices+]' to 'double'
+  c:\users\célia figueiredo\documents\github\cg2017\generator.cpp(185): note: There is no context in which this conversion is possible
+c:\users\célia figueiredo\documents\github\cg2017\generator.cpp(185): error C2660: 'setPoint': function does not take 2 arguments
+c:\users\célia figueiredo\documents\github\cg2017\generator.cpp(186): error C2664: 'double cos(double)': cannot convert argument 1 from 'float [slices+]' to 'double'
+  c:\users\célia figueiredo\documents\github\cg2017\generator.cpp(186): note: There is no context in which this conversion is possible
+c:\users\célia figueiredo\documents\github\cg2017\generator.cpp(186): error C2664: 'double sin(double)': cannot convert argument 1 from 'float [slices+]' to 'double'
+  c:\users\célia figueiredo\documents\github\cg2017\generator.cpp(186): note: There is no context in which this conversion is possible
+c:\users\célia figueiredo\documents\github\cg2017\generator.cpp(186): error C2660: 'setPoint': function does not take 2 arguments
+c:\users\célia figueiredo\documents\github\cg2017\generator.cpp(201): error C2664: 'double cos(double)': cannot convert argument 1 from 'float [slices+]' to 'double'
+  c:\users\célia figueiredo\documents\github\cg2017\generator.cpp(201): note: There is no context in which this conversion is possible
+c:\users\célia figueiredo\documents\github\cg2017\generator.cpp(201): error C2664: 'double sin(double)': cannot convert argument 1 from 'float [slices+]' to 'double'
+  c:\users\célia figueiredo\documents\github\cg2017\generator.cpp(201): note: There is no context in which this conversion is possible
+c:\users\célia figueiredo\documents\github\cg2017\generator.cpp(201): error C2660: 'setPoint': function does not take 2 arguments
+c:\users\célia figueiredo\documents\github\cg2017\generator.cpp(202): error C2664: 'double cos(double)': cannot convert argument 1 from 'float [slices+]' to 'double'
+  c:\users\célia figueiredo\documents\github\cg2017\generator.cpp(202): note: There is no context in which this conversion is possible
+c:\users\célia figueiredo\documents\github\cg2017\generator.cpp(202): error C2664: 'double sin(double)': cannot convert argument 1 from 'float [slices+]' to 'double'
+  c:\users\célia figueiredo\documents\github\cg2017\generator.cpp(202): note: There is no context in which this conversion is possible
+c:\users\célia figueiredo\documents\github\cg2017\generator.cpp(202): error C2660: 'setPoint': function does not take 2 arguments
+c:\users\célia figueiredo\documents\github\cg2017\generator.cpp(223): error C2131: expression did not evaluate to a constant
+  c:\users\célia figueiredo\documents\github\cg2017\generator.cpp(223): note: failure was caused by non-constant arguments or reference to a non-constant symbol
+  c:\users\célia figueiredo\documents\github\cg2017\generator.cpp(223): note: see usage of 'stacks'
+c:\users\célia figueiredo\documents\github\cg2017\generator.cpp(229): warning C4244: '=': conversion from 'double' to 'float', possible loss of data
+c:\users\célia figueiredo\documents\github\cg2017\generator.cpp(230): warning C4244: '=': conversion from 'double' to 'float', possible loss of data
+c:\users\célia figueiredo\documents\github\cg2017\generator.cpp(234): error C3863: array type 'float [stacks+]' is not assignable
+c:\users\célia figueiredo\documents\github\cg2017\generator.cpp(235): error C3863: array type 'float [stacks+]' is not assignable
+c:\users\célia figueiredo\documents\github\cg2017\generator.cpp(237): error C3863: array type 'float [slices+]' is not assignable
+c:\users\célia figueiredo\documents\github\cg2017\generator.cpp(238): error C3863: array type 'float [slices+]' is not assignable
+c:\users\célia figueiredo\documents\github\cg2017\generator.cpp(241): error C3863: array type 'float [slices+]' is not assignable
+c:\users\célia figueiredo\documents\github\cg2017\generator.cpp(243): error C3863: array type 'float [stacks+]' is not assignable
+c:\users\célia figueiredo\documents\github\cg2017\generator.cpp(246): error C2664: 'double sin(double)': cannot convert argument 1 from 'float [stacks+]' to 'double'
+  c:\users\célia figueiredo\documents\github\cg2017\generator.cpp(246): note: There is no context in which this conversion is possible
+c:\users\célia figueiredo\documents\github\cg2017\generator.cpp(247): error C2664: 'double sin(double)': cannot convert argument 1 from 'float [stacks+]' to 'double'
+  c:\users\célia figueiredo\documents\github\cg2017\generator.cpp(247): note: There is no context in which this conversion is possible
+c:\users\célia figueiredo\documents\github\cg2017\generator.cpp(248): error C2664: 'double cos(double)': cannot convert argument 1 from 'float [stacks+]' to 'double'
+  c:\users\célia figueiredo\documents\github\cg2017\generator.cpp(248): note: There is no context in which this conversion is possible
+c:\users\célia figueiredo\documents\github\cg2017\generator.cpp(249): error C2664: 'double cos(double)': cannot convert argument 1 from 'float [stacks+]' to 'double'
+  c:\users\célia figueiredo\documents\github\cg2017\generator.cpp(249): note: There is no context in which this conversion is possible
+c:\users\célia figueiredo\documents\github\cg2017\generator.cpp(254): error C2664: 'double cos(double)': cannot convert argument 1 from 'float [slices+]' to 'double'
+  c:\users\célia figueiredo\documents\github\cg2017\generator.cpp(254): note: There is no context in which this conversion is possible
+c:\users\célia figueiredo\documents\github\cg2017\generator.cpp(254): error C2664: 'double sin(double)': cannot convert argument 1 from 'float [slices+]' to 'double'
+  c:\users\célia figueiredo\documents\github\cg2017\generator.cpp(254): note: There is no context in which this conversion is possible
+c:\users\célia figueiredo\documents\github\cg2017\generator.cpp(254): error C2660: 'setPoint': function does not take 2 arguments
+c:\users\célia figueiredo\documents\github\cg2017\generator.cpp(255): error C2664: 'double cos(double)': cannot convert argument 1 from 'float [slices+]' to 'double'
+  c:\users\célia figueiredo\documents\github\cg2017\generator.cpp(255): note: There is no context in which this conversion is possible
+c:\users\célia figueiredo\documents\github\cg2017\generator.cpp(255): error C2664: 'double sin(double)': cannot convert argument 1 from 'float [slices+]' to 'double'
+  c:\users\célia figueiredo\documents\github\cg2017\generator.cpp(255): note: There is no context in which this conversion is possible
+c:\users\célia figueiredo\documents\github\cg2017\generator.cpp(255): error C2660: 'setPoint': function does not take 2 arguments
+c:\users\célia figueiredo\documents\github\cg2017\generator.cpp(258): error C2664: 'double cos(double)': cannot convert argument 1 from 'float [slices+]' to 'double'
+  c:\users\célia figueiredo\documents\github\cg2017\generator.cpp(258): note: There is no context in which this conversion is possible
+c:\users\célia figueiredo\documents\github\cg2017\generator.cpp(258): error C2664: 'double sin(double)': cannot convert argument 1 from 'float [slices+]' to 'double'
+  c:\users\célia figueiredo\documents\github\cg2017\generator.cpp(258): note: There is no context in which this conversion is possible
+c:\users\célia figueiredo\documents\github\cg2017\generator.cpp(258): error C2660: 'setPoint': function does not take 2 arguments
+c:\users\célia figueiredo\documents\github\cg2017\generator.cpp(259): error C2664: 'double cos(double)': cannot convert argument 1 from 'float [slices+]' to 'double'
+  c:\users\célia figueiredo\documents\github\cg2017\generator.cpp(259): note: There is no context in which this conversion is possible
+c:\users\célia figueiredo\documents\github\cg2017\generator.cpp(259): error C2664: 'double sin(double)': cannot convert argument 1 from 'float [slices+]' to 'double'
+  c:\users\célia figueiredo\documents\github\cg2017\generator.cpp(259): note: There is no context in which this conversion is possible
+c:\users\célia figueiredo\documents\github\cg2017\generator.cpp(259): error C2660: 'setPoint': function does not take 2 arguments
+c:\users\célia figueiredo\documents\github\cg2017\generator.cpp(275): error C2664: 'double sin(double)': cannot convert argument 1 from 'float [stacks+]' to 'double'
+  c:\users\célia figueiredo\documents\github\cg2017\generator.cpp(275): note: There is no context in which this conversion is possible
+c:\users\célia figueiredo\documents\github\cg2017\generator.cpp(276): error C2664: 'double cos(double)': cannot convert argument 1 from 'float [stacks+]' to 'double'
+  c:\users\célia figueiredo\documents\github\cg2017\generator.cpp(276): note: There is no context in which this conversion is possible
+c:\users\célia figueiredo\documents\github\cg2017\generator.cpp(280): error C2664: 'double cos(double)': cannot convert argument 1 from 'float [slices+]' to 'double'
+  c:\users\célia figueiredo\documents\github\cg2017\generator.cpp(280): note: There is no context in which this conversion is possible
+c:\users\célia figueiredo\documents\github\cg2017\generator.cpp(280): error C2664: 'double sin(double)': cannot convert argument 1 from 'float [slices+]' to 'double'
+  c:\users\célia figueiredo\documents\github\cg2017\generator.cpp(280): note: There is no context in which this conversion is possible
+c:\users\célia figueiredo\documents\github\cg2017\generator.cpp(280): error C2660: 'setPoint': function does not take 2 arguments
+c:\users\célia figueiredo\documents\github\cg2017\generator.cpp(281): error C2664: 'double cos(double)': cannot convert argument 1 from 'float [slices+]' to 'double'
+  c:\users\célia figueiredo\documents\github\cg2017\generator.cpp(281): note: There is no context in which this conversion is possible
+c:\users\célia figueiredo\documents\github\cg2017\generator.cpp(281): error C2664: 'double sin(double)': cannot convert argument 1 from 'float [slices+]' to 'double'
+  c:\users\célia figueiredo\documents\github\cg2017\generator.cpp(281): note: There is no context in which this conversion is possible
+c:\users\célia figueiredo\documents\github\cg2017\generator.cpp(281): error C2660: 'setPoint': function does not take 2 arguments
+c:\users\célia figueiredo\documents\github\cg2017\generator.cpp(282): error C2664: 'double cos(double)': cannot convert argument 1 from 'float [slices+]' to 'double'
+  c:\users\célia figueiredo\documents\github\cg2017\generator.cpp(282): note: There is no context in which this conversion is possible
+c:\users\célia figueiredo\documents\github\cg2017\generator.cpp(282): error C2664: 'double sin(double)': cannot convert argument 1 from 'float [slices+]' to 'double'
+  c:\users\célia figueiredo\documents\github\cg2017\generator.cpp(282): note: There is no context in which this conversion is possible
+c:\users\célia figueiredo\documents\github\cg2017\generator.cpp(282): error C2660: 'setPoint': function does not take 2 arguments
+c:\users\célia figueiredo\documents\github\cg2017\generator.cpp(283): error C2664: 'double cos(double)': cannot convert argument 1 from 'float [slices+]' to 'double'
+  c:\users\célia figueiredo\documents\github\cg2017\generator.cpp(283): note: There is no context in which this conversion is possible
+c:\users\célia figueiredo\documents\github\cg2017\generator.cpp(283): error C2664: 'double sin(double)': cannot convert argument 1 from 'float [slices+]' to 'double'
+  c:\users\célia figueiredo\documents\github\cg2017\generator.cpp(283): note: There is no context in which this conversion is possible
+c:\users\célia figueiredo\documents\github\cg2017\generator.cpp(283): error C2660: 'setPoint': function does not take 2 arguments
+c:\users\célia figueiredo\documents\github\cg2017\generator.cpp(284): error C2664: 'double cos(double)': cannot convert argument 1 from 'float [slices+]' to 'double'
+  c:\users\célia figueiredo\documents\github\cg2017\generator.cpp(284): note: There is no context in which this conversion is possible
+c:\users\célia figueiredo\documents\github\cg2017\generator.cpp(284): error C2664: 'double sin(double)': cannot convert argument 1 from 'float [slices+]' to 'double'
+  c:\users\célia figueiredo\documents\github\cg2017\generator.cpp(284): note: There is no context in which this conversion is possible
+c:\users\célia figueiredo\documents\github\cg2017\generator.cpp(284): error C2660: 'setPoint': function does not take 2 arguments
+c:\users\célia figueiredo\documents\github\cg2017\generator.cpp(285): error C2664: 'double cos(double)': cannot convert argument 1 from 'float [slices+]' to 'double'
+  c:\users\célia figueiredo\documents\github\cg2017\generator.cpp(285): note: There is no context in which this conversion is possible
+c:\users\célia figueiredo\documents\github\cg2017\generator.cpp(285): error C2664: 'double sin(double)': cannot convert argument 1 from 'float [slices+]' to 'double'
+  c:\users\célia figueiredo\documents\github\cg2017\generator.cpp(285): note: There is no context in which this conversion is possible
+c:\users\célia figueiredo\documents\github\cg2017\generator.cpp(285): error C2660: 'setPoint': function does not take 2 arguments
+c:\users\célia figueiredo\documents\github\cg2017\generator.cpp(314): error C4996: 'sscanf': This function or variable may be unsafe. Consider using sscanf_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+  c:\program files (x86)\windows kits\10\include\10.0.10240.0\ucrt\stdio.h(2254): note: see declaration of 'sscanf'
+c:\users\célia figueiredo\documents\github\cg2017\generator.cpp(320): error C4996: 'fopen': This function or variable may be unsafe. Consider using fopen_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+  c:\program files (x86)\windows kits\10\include\10.0.10240.0\ucrt\stdio.h(205): note: see declaration of 'fopen'
+c:\users\célia figueiredo\documents\github\cg2017\generator.cpp(336): error C4996: 'sscanf': This function or variable may be unsafe. Consider using sscanf_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+  c:\program files (x86)\windows kits\10\include\10.0.10240.0\ucrt\stdio.h(2254): note: see declaration of 'sscanf'
+c:\users\célia figueiredo\documents\github\cg2017\generator.cpp(342): error C4996: 'fopen': This function or variable may be unsafe. Consider using fopen_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+  c:\program files (x86)\windows kits\10\include\10.0.10240.0\ucrt\stdio.h(205): note: see declaration of 'fopen'
+c:\users\célia figueiredo\documents\github\cg2017\generator.cpp(359): error C4996: 'fopen': This function or variable may be unsafe. Consider using fopen_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+  c:\program files (x86)\windows kits\10\include\10.0.10240.0\ucrt\stdio.h(205): note: see declaration of 'fopen'
+c:\users\célia figueiredo\documents\github\cg2017\generator.cpp(382): error C4996: 'sscanf': This function or variable may be unsafe. Consider using sscanf_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+  c:\program files (x86)\windows kits\10\include\10.0.10240.0\ucrt\stdio.h(2254): note: see declaration of 'sscanf'
+c:\users\célia figueiredo\documents\github\cg2017\generator.cpp(389): error C4996: 'fopen': This function or variable may be unsafe. Consider using fopen_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+  c:\program files (x86)\windows kits\10\include\10.0.10240.0\ucrt\stdio.h(205): note: see declaration of 'fopen'
+c:\users\célia figueiredo\documents\github\cg2017\generator.cpp(404): error C4996: 'sscanf': This function or variable may be unsafe. Consider using sscanf_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+  c:\program files (x86)\windows kits\10\include\10.0.10240.0\ucrt\stdio.h(2254): note: see declaration of 'sscanf'
+c:\users\célia figueiredo\documents\github\cg2017\generator.cpp(411): error C4996: 'fopen': This function or variable may be unsafe. Consider using fopen_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+  c:\program files (x86)\windows kits\10\include\10.0.10240.0\ucrt\stdio.h(205): note: see declaration of 'fopen'
+c:\users\célia figueiredo\documents\github\cg2017\generator.cpp(433): error C4996: 'sscanf': This function or variable may be unsafe. Consider using sscanf_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+  c:\program files (x86)\windows kits\10\include\10.0.10240.0\ucrt\stdio.h(2254): note: see declaration of 'sscanf'
+c:\users\célia figueiredo\documents\github\cg2017\generator.cpp(440): error C4996: 'fopen': This function or variable may be unsafe. Consider using fopen_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+  c:\program files (x86)\windows kits\10\include\10.0.10240.0\ucrt\stdio.h(205): note: see declaration of 'fopen'
+c:\users\célia figueiredo\documents\github\cg2017\generator.cpp(461): error C4996: 'sscanf': This function or variable may be unsafe. Consider using sscanf_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+  c:\program files (x86)\windows kits\10\include\10.0.10240.0\ucrt\stdio.h(2254): note: see declaration of 'sscanf'
+c:\users\célia figueiredo\documents\github\cg2017\generator.cpp(468): error C4996: 'fopen': This function or variable may be unsafe. Consider using fopen_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+  c:\program files (x86)\windows kits\10\include\10.0.10240.0\ucrt\stdio.h(205): note: see declaration of 'fopen'
+  engine.cpp
+c:\users\célia figueiredo\documents\github\cg2017\engine.cpp(50): warning C4244: 'initializing': conversion from 'double' to 'float', possible loss of data
+c:\users\célia figueiredo\documents\github\cg2017\engine.cpp(73): warning C4244: '=': conversion from 'double' to 'float', possible loss of data
+c:\users\célia figueiredo\documents\github\cg2017\engine.cpp(76): warning C4244: '=': conversion from 'double' to 'float', possible loss of data
+c:\users\célia figueiredo\documents\github\cg2017\engine.cpp(97): warning C4244: '=': conversion from 'double' to 'float', possible loss of data
+c:\users\célia figueiredo\documents\github\cg2017\engine.cpp(98): warning C4244: '=': conversion from 'double' to 'float', possible loss of data
+c:\users\célia figueiredo\documents\github\cg2017\engine.cpp(102): warning C4244: '=': conversion from 'double' to 'float', possible loss of data
+c:\users\célia figueiredo\documents\github\cg2017\engine.cpp(103): warning C4244: '=': conversion from 'double' to 'float', possible loss of data
+c:\users\célia figueiredo\documents\github\cg2017\engine.cpp(107): warning C4244: '=': conversion from 'double' to 'float', possible loss of data
+c:\users\célia figueiredo\documents\github\cg2017\engine.cpp(111): warning C4244: '=': conversion from 'double' to 'float', possible loss of data
+c:\users\célia figueiredo\documents\github\cg2017\engine.cpp(114): warning C4244: '=': conversion from 'double' to 'float', possible loss of data
+c:\users\célia figueiredo\documents\github\cg2017\engine.cpp(117): warning C4244: '=': conversion from 'double' to 'float', possible loss of data
+c:\users\célia figueiredo\documents\github\cg2017\engine.cpp(136): warning C4101: 'i': unreferenced local variable
+c:\users\célia figueiredo\documents\github\cg2017\engine.cpp(177): warning C4018: '<': signed/unsigned mismatch
+c:\users\célia figueiredo\documents\github\cg2017\engine.cpp(195): error C4996: 'fopen': This function or variable may be unsafe. Consider using fopen_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+  c:\program files (x86)\windows kits\10\include\10.0.10240.0\ucrt\stdio.h(205): note: see declaration of 'fopen'
+c:\users\célia figueiredo\documents\github\cg2017\engine.cpp(198): error C4996: 'fscanf': This function or variable may be unsafe. Consider using fscanf_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+  c:\program files (x86)\windows kits\10\include\10.0.10240.0\ucrt\stdio.h(1193): note: see declaration of 'fscanf'
+c:\users\célia figueiredo\documents\github\cg2017\engine.cpp(200): error C4996: 'fscanf': This function or variable may be unsafe. Consider using fscanf_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+  c:\program files (x86)\windows kits\10\include\10.0.10240.0\ucrt\stdio.h(1193): note: see declaration of 'fscanf'
+c:\users\célia figueiredo\documents\github\cg2017\engine.cpp(201): error C4996: 'sscanf': This function or variable may be unsafe. Consider using sscanf_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+  c:\program files (x86)\windows kits\10\include\10.0.10240.0\ucrt\stdio.h(2254): note: see declaration of 'sscanf'
+c:\users\célia figueiredo\documents\github\cg2017\engine.cpp(202): error C4996: 'strcpy': This function or variable may be unsafe. Consider using strcpy_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+  c:\program files (x86)\windows kits\10\include\10.0.10240.0\ucrt\string.h(119): note: see declaration of 'strcpy'
+c:\users\célia figueiredo\documents\github\cg2017\engine.cpp(215): error C4996: 'fopen': This function or variable may be unsafe. Consider using fopen_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+  c:\program files (x86)\windows kits\10\include\10.0.10240.0\ucrt\stdio.h(205): note: see declaration of 'fopen'
+c:\users\célia figueiredo\documents\github\cg2017\engine.cpp(216): error C4996: 'fscanf': This function or variable may be unsafe. Consider using fscanf_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+  c:\program files (x86)\windows kits\10\include\10.0.10240.0\ucrt\stdio.h(1193): note: see declaration of 'fscanf'
+c:\users\célia figueiredo\documents\github\cg2017\engine.cpp(220): error C4996: 'fscanf': This function or variable may be unsafe. Consider using fscanf_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+  c:\program files (x86)\windows kits\10\include\10.0.10240.0\ucrt\stdio.h(1193): note: see declaration of 'fscanf'
+  point.cpp
+  Generating Code...
+c:\users\célia figueiredo\desktop\martinho\cg-fase1-grupo5\src\point.cpp(16): error C4700: uninitialized local variable 'pointArray' used

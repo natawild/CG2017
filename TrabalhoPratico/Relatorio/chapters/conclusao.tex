@@ -5,21 +5,16 @@ Para a realizaçãoo desta primeira fase tivemos como objectivo desenvolver um g
 No lado do \textit{engine}, a aplicação consegue ler ficheiros XML e .3D e a partir dai desenhar as figuras com os pontos especificados nos ficheiros. Adicionalmente ao sugerido, incluiu-se também uma câmara colocada sobre uma esfera que permite ao utilizador ver a figura desenhada de vários ângulos. 
 
 
-Não obstante, existem aspectos em que o trabalho que poderiam ser melhorados e serão alvo de atenção no futuro.  Em primeiro lugar, destaca-se a questão da câmara. Nesta fase implementou-se a câmara usando coordenadas esféricas. Deste modo mover a câmara corresponde apenas a chamar as funções definidas na classe. Este aspecto facilitou imenso a implementação da câmara, no entanto trouxe também algumas desvantagens. Sendo a câmara uma instância de \textit{CoordsEsfericas} significa que a câmara só pode ter coordenadas esféricas. Isto dificulta a adição de funcionalidades extra à câmara.  Isto deixa a entender que no futuro a câmara terá que pertencer a uma classe própria e muito provavelmente será esse o caminho a seguir.
-
-A prioridade desde cedo foi ter código simples, funcional e fácil de ler. Tal implicou que muitas vezes quando confrontados com a decisão de manter algumas variáveis como públicas ou privadas a decisão tenha sido manter públicas.
+Não obstante, existem aspectos em que o trabalho que poderiam ser melhorados e serão alvo de atenção no futuro. Pretendemos que a interação com a camara seja melhorada, pois currentemente a sua interação é pouco intuitiva. 
 
 
-Exemplos disso são as variaveis Ponto3D.
+A prioridade desde cedo foi ter código simples, funcional e fácil de ler. Tal implicou que muitas vezes quando confrontados com a decisão de manter algumas variáveis como públicas ou privadas a decisão tenha sido manter públicas. 
+
 
 
 Existem, no entanto, alguns problemas de otimizaçãoo e desorganização
 no código. Ou seja, existem algumas linhas de código que como estão a ser
-repetidas no programa deveriam passar para funçõeses distintas. As estruturas
-que registam “.3d” não estão preparadas para situaçõoes em que os pontos
-sejam repetidos, por isso nesse aspeto poderia-se obter uma leitura muito
-mais eficiente caso fosse o \textit{Generator} a produzir esses pontos. Desta forma
-procuraremos numa fase posterior melhorar o projeto nesse sentido.
+repetidas no programa deveriam passar para funções distintas. 
 Como o objetivo principal do projeto não é ter bons módulos de dados nem bom encapsulamento dos mesmos, estes aspectos foram deixados para segundo plano, no entanto serão alvo de uma atenção mais cuidada no futuro.
 
 Em suma, achamos que, com esta fase 1, foram criadas as bases para a

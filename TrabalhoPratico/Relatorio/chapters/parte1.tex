@@ -217,7 +217,7 @@ Cria plano com centro em C e orientacao = 0
 Calcula coordendas centro C'
 Cria plano com centro em C' e orientacao = 1
 
-return número de ponto que calculou para fazer a caixa;
+return número de pontos que calculou para fazer a caixa;
 }
 
 \end{Verbatim}
@@ -233,10 +233,10 @@ return número de ponto que calculou para fazer a caixa;
 
 \subsection{Gerar Cone}
 
-Para gerar os pontos do cone, primeiro é necessário desenhar os pontos da camada do topo do cone, estes que serão a primeira camada constituida apenas por triângulos. 
+Para gerar os pontos do cone começamos por desenhar os pontos da camada superior, esta constituida por triangulos unidos pelo vertice superior.
 
 
-De seguida é necessário gerar os pontos para a superfície ``curva'' do cone. Para essa superfício, abordagem seguida foi a de fazer o cone camada a camada. As fatias partem cada camada numa espécie ``rectângulos'' como o que se mostra na figura \ref{p1:fig:p3_seccaoCone_edit}.
+De seguida foram gerados os pontos para a superfície ``curva'' em torno da figura. Para essa superfície a abordagem seguida foi a de fazer camada a camada. As fatias partem cada camada numa espécie ``rectângulos'' como o que se mostra na figura \ref{p1:fig:p3_seccaoCone_edit}.
 
 
 \begin{figure}[<+htpb+>]
@@ -246,12 +246,14 @@ De seguida é necessário gerar os pontos para a superfície ``curva'' do cone. 
 	\label{p1:fig:p3_seccaoCone_edit}
 \end{figure}
 
-Ou seja, é possível construir uma fatia de uma dada camada com os pontos A,B,C e D. É no entanto necessário saber as coordenadas destes pontos. Para tal, foram usadas coordenadas polares. Podemos ver os pontos A e D como pertencentes a um mesmo círculo, com centro no centro do cone. Da mesma forma, também os pontos B e C se encontram num mesmo círculo, com raio maior do que o círculo onde estão os pontos A e D. O raio dos dois círculos em que estes dois conjuntos de pontos se encontram difere, no entanto o raio do círculo depende da camada que se está a considerar. 
+Ou seja, é possível construir uma fatia de uma dada camada com os pontos A,B,C e D. É no entanto necessário saber as coordenadas destes pontos. Para tal, foram usadas coordenadas polares baseadas em ângulos que foram armazenados ordenadamente em arrays.  
+
+Podemos ver os pontos A e D como pertencentes a um mesmo círculo, com centro no centro do cone. Da mesma forma, também os pontos B e C se encontram num mesmo círculo, com raio maior do que o círculo onde estão os pontos A e D. O raio dos dois círculos em que estes dois conjuntos de pontos se encontram difere, dependendo da camada que se está a considerar. 
 
 
-Por exemplo, se virmos a base do cone como um círculo de raio $Raio$, à medida que o valor de $Altura$ aumenta, ou seja, à medida que subimos no cone, o $Raio$ das novas circunferências vai sendo cada vez menor.
-Quando $Altura$ for igual ao valor de $d$ o raio da nova circunferência é
-0, ou seja, é apenas o ponto do topo do cone.  A figura \ref{p1:fig:p3_conePerfil} pretende ilustrar tal situação. 
+Por exemplo, se virmos a base do cone como um círculo de raio $Raio$, à medida que o valor de $Altura$ diminui, ou seja, à medida que subimos no cone, o $Raio$ das novas circunferências vai sendo cada vez menor.
+
+Sabendo $\alpha$ a partir da relação entre a Altura e o raio do cone conseguimos para cada altura $Altura -d$ calcular o raio nessa camada. A figura \ref{p1:fig:p3_conePerfil} pretende ilustrar tal situação. 
 
 \begin{figure}[<+htpb+>]
 	\centering
@@ -268,18 +270,31 @@ drawCone_Points(float radius, float height, float centerX,
 float centerY, float centerZ, int slices, int stacks, 
 Ponto3D points){
 
-sinAlpha = radius / height;//calcula os raios das diferentes stacks;
+sinAlpha = radius / height;// É usado para calcular os raios das diferentes stacks;
 
 divBeta = (360.0f / (float) slices) * M_PI / 180.0f;//tamanho do 
 ângulo para cada slice
 
 d = height / (float) stacks; // altura de cada stack do cone
 
-for(i = 1;i < slices;i++)
+for(i = 1;i < slices;i++){
+	betas[i] = betas[i-1] + divBeta;
 	Calcula ângulos no plano paralelo a XZ (chao);
+	}
 	
-for(i = 0;i < slices; i++)	{
-	Desenha os triângulos do topo do cone 
+for(i = 0;i < slices; i++){
+	pt1 = setPoint(centerX,centerY + height,centerZ);
+	
+	pt2 = setPoint((radDown * cos(betas[i+1])) +centerX, 
+	centerY + stHeightDown, 
+	(radDown * sin(betas[i+1])) + centerZ);
+	
+	pt3 = setPoint((radDown * cos(betas[i])) + centerX,
+	 centerY + stHeightDown,
+	 (radDown * sin(betas[i])) + centerZ);
+
+
+	Armazena os pontos para gerar os triângulos do topo do cone 
 }
 
 
@@ -308,7 +323,7 @@ for(i = 0; i < slices; i++){
 \newpage
 \subsection{Gerar Esfera}
 
-À semelhança do cone também para a esfera é possível gerar uma fatia de uma determinada camada usando 4 pontos conforme mostrado na figura \ref{p1:fig:p3_esferaSeccao_edit}.
+À semelhança do cone também para a esfera é também possível gerar uma fatia de determinada camada usando 4 pontos conforme mostrado na figura \ref{p1:fig:p3_esferaSeccao_edit}.
 
 \begin{figure}[<+htpb+>]
 	\centering
@@ -317,29 +332,32 @@ for(i = 0; i < slices; i++){
 	\label{p1:fig:p3_esferaSeccao_edit}
 \end{figure}
 
-Também para a esfera a abordagem seguida foi a de construir camada a camada, começando pelos topos na direção do eixo dos YY e o centro paralelo ao plano XZ. 
-O centro da esfera é o ponto de coordenadas (0, 0, 0) e vão ser necessários dois ângulos diferentes para conseguir desenhar os triângulos que ligam as diferentes circunferências.
-
-Utiliza-se um arco no plano XY divido em partes iguais, dependendo do
-número de stacks. O ângulo dentro desse arco será $\beta$ e para cada um dos
-valores de $\alpha$ é possível obter o valor de y para a nova circunferência assim
-como o raio da mesma.
-Cada uma das circunferências vai ser dividida em partes iguais, dependendo
-do número de slices. Para calcular os diferentes pontos dentro da
-circunferˆencia utiliza-se um ângulo  $\alpha$ e, para cada um dos pontos criam-se
-dois triângulos ligados à circunferência imediatamente abaixo, um à direita
-do ponto atual e outro à esquerda. 
 
 
-Tal como no cone a criação dos arrays com os ângulos todos, as fatias  e as camadas sendo que os iniciais sao predefinidos
-, os angulos alpha (do Norte ao sul) começam em 90 e vao até -90, i.e., $\pi /2 $e vão até $-\pi /2 $
+Para a construção da figura optou-se por construir o círculo central paralelo ao plano XZ e os topos na direção do eixo dos yy. 
+
+Começando pelos polos, que à semelhança do cone são constituídos por triângulos, procedendo então à construção da restante figura camada a camada. 
+
+
+Nesta fase o centro da esfera é o ponto de coordenadas (0, 0, 0) e foram utilizados dois ângulos diferentes para conseguir desenhar os triângulos que ligam as diferentes circunferências.\\
+
+
+Utiliza-se um ângulo ($\alpha$), dividido em partes iguais dependendo do
+número de camadas \textit{(stacks)}, com o ângulo  $\beta$, também dividido em partes iguais dependendo do número de fatias, que em conjunto designam as coordenadas polares dos vértices da esfera. Cada par de camadas adjacentes é conectado por um número de rectangulos (como previamente referido, representados por dois triângulos), número este que depende do número de fatias.\\
+
+Variação dos ângulos: 
+\begin{itemize}
+	\item 90 > $\alpha$ > -90
+	\item 0 < $\beta$ < 360 
+\end{itemize}
+
  
-
 Assim temos o seguinte pseudo-código:
 
 \begin{Verbatim}
 
-drawSphere(float radius, float centerX, float centerY, float centerZ, int stacks, int slices, Ponto3D points){
+drawSphere(float radius, float centerX, float centerY,
+float centerZ, int stacks, int slices, Ponto3D points){
 
 // calculo do angulo de cada slice e stack, passado para radianos
 divBeta = (360.0f / (float) slices) * M_PI / 180.0f;
@@ -348,7 +366,7 @@ divAlpha = M_PI / (float) stacks;
 
 for(i = 0;i < slices; i++){
 Desenha os triângulos da parte superior da esfera;
-Desenha os triângulos da parte inferiro da esfera;
+Desenha os triângulos da parte inferior da esfera;
 }
 
 for(i = 2;i <= stacks;i++){

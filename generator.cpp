@@ -56,12 +56,12 @@ int drawPlane_Points(float sizeX, float sizeY, float sizeZ, float centerX, float
 		for(j = 0;j < (n - 1); j++)
 			for(i = 0;i < (n - 1);i++) {
 				// atribui os valores a um ponto interno e depois copia-o para o array.
-				pt1 = setPoint(ptsX[i],ptsY[j],ptsZ[*k+1]);
-				pt2 = setPoint(ptsX[i+1],ptsY[j],ptsZ[*k]);
-				pt3 = setPoint(ptsX[i],ptsY[j+1],ptsZ[*k]);
-				pt4 = setPoint(ptsX[i],ptsY[j+1],ptsZ[*k+1]);
-				pt5 = setPoint(ptsX[i+1],ptsY[j],ptsZ[*k+1]);
-				pt6 = setPoint(ptsX[i+1],ptsY[j+1],ptsZ[*k]);
+				pt1 = setPoint(ptsX[i],ptsY[j],ptsZ[*k+1]); //XZ_Y:A, XY_Z:A, YZ_X:A
+				pt2 = setPoint(ptsX[i+1],ptsY[j],ptsZ[*k]); //C,B,B
+				pt3 = setPoint(ptsX[i],ptsY[j+1],ptsZ[*k]); //D,D,C
+				pt4 = setPoint(ptsX[i],ptsY[j+1],ptsZ[*k+1]); //A,D,D
+				pt5 = setPoint(ptsX[i+1],ptsY[j],ptsZ[*k+1]);//B,B,A
+				pt6 = setPoint(ptsX[i+1],ptsY[j+1],ptsZ[*k]);//C,C,C
 				points[ind+0] = pt1;
 				points[ind+1] = pt2;
 				points[ind+2] = pt3;
@@ -70,7 +70,7 @@ int drawPlane_Points(float sizeX, float sizeY, float sizeZ, float centerX, float
 				points[ind+5] = pt6;
 				ind += 6;
 			}
-	} else {
+	} else { //rev=1, desenha parte de trás
 		for(j = 0;j < (n - 1); j++)
 			for(i = 0;i < (n - 1);i++) {
 				pt6 = setPoint(ptsX[i],ptsY[j],ptsZ[*k+1]);
@@ -104,8 +104,8 @@ int drawBox_Points(float sizeX, float sizeY, float sizeZ, float centerX, float c
 {
 	int res = 0;
 	// Plano de Cima e Baixo:
-	res += drawPlane_Points(sizeX, 0, sizeZ, centerX, centerY + (sizeY / 2.0f), centerZ, divisions, 0, points+res);
-	res += drawPlane_Points(sizeX, 0, sizeZ, centerX, centerY - (sizeY / 2.0f), centerZ, divisions, 1, points+res);
+	res += drawPlane_Points(sizeX, 0, sizeZ, centerX, centerY + (sizeY / 2.0f), centerZ, divisions, 0, points+res);//contra-relogio
+	res += drawPlane_Points(sizeX, 0, sizeZ, centerX, centerY - (sizeY / 2.0f), centerZ, divisions, 1, points+res);//relógio
 
 	// Plano de "Esquerda e Direita":
 	res += drawPlane_Points(0, sizeY, sizeZ, centerX + (sizeX / 2.0f), centerY, centerZ, divisions, 0, points+res);
@@ -135,7 +135,7 @@ int drawCone_Points(float radius, float height, float centerX, float centerY, fl
 	struct sPonto3D pt1, pt2, pt3, pt4, pt5, pt6;
 	int i, j, ind = 0;
 
-	sinAlpha = radius / height;								// seno de metade do angulo do bico do cone - calcula os raios das diferentes stacks;
+	sinAlpha = radius / height;								// seno de metade do angulo do bico do cone - calcular os raios das diferentes stacks;
 	divBeta = (360.0f / (float) slices) * M_PI / 180.0f;	// tamanho do angulo para cada slice
 	d = height / (float) stacks;							// altura de cada stack do cone
 
@@ -225,7 +225,7 @@ int drawSphere(float radius, float centerX, float centerY, float centerZ, int st
 	int i, j, ind = 0;
 	struct sPonto3D pt1, pt2, pt3, pt4, pt5, pt6;
 
-	// calculo do angulo de cada slice e stack, pasado para radianos
+	// calculo do angulo de cada slice e stack, passado para radianos
 	divBeta = (360.0f / (float) slices) * M_PI / 180.0f;
 	divAlpha = M_PI / (float) stacks; 	// == (180.0f / (float) stacks) * M_PI / 180.0f;
 

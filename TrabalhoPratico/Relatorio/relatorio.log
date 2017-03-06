@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.15 (MiKTeX 2.9 64-bit) (preloaded format=pdflatex 2016.3.4)  6 MAR 2017 12:53
+This is pdfTeX, Version 3.14159265-2.6-1.40.15 (MiKTeX 2.9 64-bit) (preloaded format=pdflatex 2016.3.4)  6 MAR 2017 17:51
 entering extended mode
 **relatorio.tex
 (relatorio.tex
@@ -1356,7 +1356,7 @@ Package pdftex.def Info: imagens/p3_seccaoCone_edit.png used on input line 244.
 File: imagens/p3_conePerfil.png Graphic file (type png)
 
 <use imagens/p3_conePerfil.png>
-Package pdftex.def Info: imagens/p3_conePerfil.png used on input line 258.
+Package pdftex.def Info: imagens/p3_conePerfil.png used on input line 260.
 (pdftex.def)             Requested size: 179.16893pt x 180.67456pt.
  [8 <./imagens/p3_seccaoCone_edit.png> <./imagens/p3_conePerfil.png>]
 <imagens/print_cone_raio1-5_altura4_slices75_stacks75.png, id=64, 460.72125pt x
@@ -1365,38 +1365,48 @@ File: imagens/print_cone_raio1-5_altura4_slices75_stacks75.png Graphic file (ty
 pe png)
  <use imagens/print_cone_raio1-5_altura4_slices75_stacks75.png>
 Package pdftex.def Info: imagens/print_cone_raio1-5_altura4_slices75_stacks75.p
-ng used on input line 302.
+ng used on input line 317.
 (pdftex.def)             Requested size: 230.36006pt x 234.50052pt.
 
 [9] <imagens/p3_esferaSeccao_edit.png, id=68, 581.0508pt x 251.0178pt>
 File: imagens/p3_esferaSeccao_edit.png Graphic file (type png)
 
 <use imagens/p3_esferaSeccao_edit.png>
-Package pdftex.def Info: imagens/p3_esferaSeccao_edit.png used on input line 31
-5.
+Package pdftex.def Info: imagens/p3_esferaSeccao_edit.png used on input line 33
+0.
 (pdftex.def)             Requested size: 290.52469pt x 125.50859pt.
- [10 <./imagens/print_cone_raio1-5_altura4_slices75_stacks75.png> <./imagens/p3
-_esferaSeccao_edit.png>]
-<imagens/p3_esfera_2_75_75.png, id=76, 478.03593pt x 458.46281pt>
+
+Underfull \hbox (badness 10000) in paragraph at lines 342--343
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 345--347
+
+ []
+
+[10 <./imagens/print_cone_raio1-5_altura4_slices75_stacks75.png> <./imagens/p3_
+esferaSeccao_edit.png>]
+<imagens/p3_esfera_2_75_75.png, id=75, 478.03593pt x 458.46281pt>
 File: imagens/p3_esfera_2_75_75.png Graphic file (type png)
 
 <use imagens/p3_esfera_2_75_75.png>
-Package pdftex.def Info: imagens/p3_esfera_2_75_75.png used on input line 366.
+Package pdftex.def Info: imagens/p3_esfera_2_75_75.png used on input line 384.
 (pdftex.def)             Requested size: 239.01738pt x 229.23083pt.
 ) (chapters/parte2.tex [11 <./imagens/p3_esfera_2_75_75.png>]
 Cap\'{\i }tulo 3.
 [12
 
-] [13] [14] [15]) (chapters/conclusao.tex [16]
+] [13] [14]) (chapters/conclusao.tex [15]
 Cap\'{\i }tulo 4.
-) [17
+) [16
 
 ] (relatorio.aux) ) 
 Here is how much of TeX's memory you used:
- 31472 strings out of 493698
- 738893 string characters out of 3144375
- 862392 words of memory out of 3000000
- 34263 multiletter control sequences out of 15000+200000
+ 31471 strings out of 493698
+ 738871 string characters out of 3144375
+ 863381 words of memory out of 3000000
+ 34262 multiletter control sequences out of 15000+200000
  49595 words of font info for 60 fonts, out of 3000000 for 9000
  1025 hyphenation exceptions out of 8191
  62i,7n,83p,10415b,609s stack positions out of 5000i,500n,10000p,200000b,50000s
@@ -1404,15 +1414,14 @@ Here is how much of TeX's memory you used:
 }<C:/Program Files/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmmi10.pfb><C:/Pro
 gram Files/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmmi12.pfb><C:/Program Fil
 es/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmr10.pfb><C:/Program Files/MiKTeX
- 2.9/fonts/type1/public/amsfonts/cm/cmr12.pfb><C:/Program Files/MiKTeX 2.9/font
-s/type1/public/amsfonts/cm/cmsy10.pfb><C:/Program Files/MiKTeX 2.9/fonts/type1/
-urw/courier/ucrr8a.pfb><C:/Program Files/MiKTeX 2.9/fonts/type1/urw/times/utmb8
-a.pfb><C:/Program Files/MiKTeX 2.9/fonts/type1/urw/times/utmbi8a.pfb><C:/Progra
-m Files/MiKTeX 2.9/fonts/type1/urw/times/utmr8a.pfb><C:/Program Files/MiKTeX 2.
-9/fonts/type1/urw/times/utmri8a.pfb>
-Output written on relatorio.pdf (20 pages, 1106439 bytes).
+ 2.9/fonts/type1/public/amsfonts/cm/cmsy10.pfb><C:/Program Files/MiKTeX 2.9/fon
+ts/type1/urw/courier/ucrr8a.pfb><C:/Program Files/MiKTeX 2.9/fonts/type1/urw/ti
+mes/utmb8a.pfb><C:/Program Files/MiKTeX 2.9/fonts/type1/urw/times/utmbi8a.pfb><
+C:/Program Files/MiKTeX 2.9/fonts/type1/urw/times/utmr8a.pfb><C:/Program Files/
+MiKTeX 2.9/fonts/type1/urw/times/utmri8a.pfb>
+Output written on relatorio.pdf (19 pages, 1097263 bytes).
 PDF statistics:
- 133 PDF objects out of 1000 (max. 8388607)
+ 126 PDF objects out of 1000 (max. 8388607)
  0 named destinations out of 1000 (max. 500000)
  83 words of extra memory for PDF output out of 10000 (max. 10000000)
 
