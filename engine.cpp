@@ -37,7 +37,7 @@ float lx=0.0f, ly=0.0f, lz=-1.0f;
 // XZ position of the camera
 float xcam=0.0f, ycam=0.5f, zcam=5.0f;
 // Gestão da imagem
-int modoPoligonos = GL_LINE;
+int _polygon_mode = GL_LINE;
 
 void changeSize(int w, int h) {
 
@@ -116,6 +116,15 @@ void processNormalKeys(unsigned char key, int xx, int yy) {
 		case 'e' :
 			ycam = (ycam - 0.5);
 			break;
+		case 'f' :
+			_polygon_mode = GL_FILL;
+			break;
+		case 'g' :
+			_polygon_mode = GL_LINE;
+			break;
+		case 'h' :
+			_polygon_mode = GL_POINT;
+			break;
 	}
 	glutPostRedisplay();
 }
@@ -136,7 +145,7 @@ void renderScene(void) {
 
 	// put drawing instructions here
 
-	glPolygonMode(GL_FRONT_AND_BACK, modoPoligonos);
+	glPolygonMode(GL_FRONT_AND_BACK, _polygon_mode);
 
 	glBegin(GL_TRIANGLES);
 		glColor3f(0.0, 0.0, 1.0);
