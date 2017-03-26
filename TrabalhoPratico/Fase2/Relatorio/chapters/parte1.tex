@@ -1,0 +1,29 @@
+\chapter{Descrição do processo de Leitura }
+
+O ficheiro de configuração define toda a informação sobre os ficheiros a carregar e as suas transformações, como tal é composto por 7 elementos:
+\textit{scene}, \textit{group}, \textit{translate}, \textit{text}, \textit{scale}, \textit{models}, \textit{model}. 
+Destes as transformações são opcionais e o ficheiro, definido em \textit{XML}, assenta sob a forma de uma árvore de \textit{groups}.
+
+Ou seja, cada nodo \textit{group} é composto por um conjunto de ficheiros \textit{models}, até 3 transformações diferentes, e vários nodos filho \textit{group}. 
+A vantagem desta alternativa é realizar transformações relativas a outro objeto ao invés de absolutas à origem. 
+Por exemplo, para desenhar as luas de Júpiter, basta deslocar com base na distância a Júpiter, ao invés de ser com base na distância ao sol, o que facilitará depois nas translações. 
+
+Seguindo o exemplo anterior, como Júpiter realiza uma translação à volta do sol, no ficheiro de configuração Júpiter fará parte de um elemento que é filho do Sol, e o mesmo para a lua em relação a Júpiter.
+
+As informações necessárias relativamente aos elementos são em todos os casos atributos como \textit{file} para representar o nome de um ficheiro num elemento \textit{model} ou como os eixos e ângulo de uma rotação, segue de seguida um exemplo.
+
+
+\chapter{ Descrição das estruturas de dados para armazenar os Grupos}
+
+De acordo com a estrutura definida pelo ficheiro de configuração, foi necessário também criar uma estrutura para carregar toda essa informação.  Assim utiliza-se a classe \textit{Group }que é composta pela informação das transformações, um conjunto de ficheiros e grupos filho. Segue a definição das
+suas variáveis:
+
+\chapter{ Descrição do ciclo de rendering}
+
+
+
+
+
+
+
+
