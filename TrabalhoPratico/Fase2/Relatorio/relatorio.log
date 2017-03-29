@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.17 (TeX Live 2016) (preloaded format=pdflatex 2017.3.9)  26 MAR 2017 17:16
+This is pdfTeX, Version 3.14159265-2.6-1.40.17 (TeX Live 2016) (preloaded format=pdflatex 2017.3.9)  29 MAR 2017 15:23
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -1402,10 +1402,15 @@ LaTeX Font Info:    Font shape `T1/ptm/bx/it' in size <17.28> not available
 File: celia.jpg Graphic file (type jpg)
  <use celia.jpg>
 Package pdftex.def Info: celia.jpg used on input line 35.
-(pdftex.def)             Requested size: 128.47772pt x 160.39641pt.
+(pdftex.def)             Requested size: 115.627pt x 144.35309pt.
+
+Overfull \hbox (24.57957pt too wide) in paragraph at lines 35--37
+[][]
+ []
+
 
 Underfull \hbox (badness 10000) in paragraph at lines 35--37
-[][]
+\T1/ptm/m/n/10.95 Cé-lia Fi-guei-redo
  []
 
 <luis.jpg, id=7, 481.04718pt x 401.24907pt>
@@ -1414,19 +1419,34 @@ File: luis.jpg Graphic file (type jpg)
 Package pdftex.def Info: luis.jpg used on input line 40.
 (pdftex.def)             Requested size: 144.31526pt x 120.37564pt.
 
-Overfull \hbox (7.74065pt too wide) in paragraph at lines 40--42
+Overfull \hbox (53.26784pt too wide) in paragraph at lines 40--42
 [][]
+ []
+
+<nelson.png, id=8, 158.5925pt x 218.8175pt>
+File: nelson.png Graphic file (type png)
+ <use nelson.png>
+Package pdftex.def Info: nelson.png used on input line 45.
+(pdftex.def)             Requested size: 99.91379pt x 137.85574pt.
+
+Overfull \hbox (8.86636pt too wide) in paragraph at lines 45--47
+[][]
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 45--47
+\T1/ptm/m/n/10.95 Nel-son Car-va-lho
  []
 
 [1
 
 {/usr/local/texlive/2016/texmf-var/fonts/map/pdftex/updmap/pdftex.map} <./logo.
-png> <./celia.jpg> <./luis.jpg>]) (./relatorio.toc)
+png> <./celia.jpg> <./luis.jpg> <./nelson.png>]) (./relatorio.toc)
 \tf@toc=\write6
 \openout6 = `relatorio.toc'.
 
- (./chapters/resumo.tex
-[1
+
+(./chapters/resumo.tex [1
 
 ] [1]) (./chapters/introducao.tex
 Cap\'{\i }tulo 1.
@@ -1450,10 +1470,10 @@ Cap\'{\i }tulo 5.
 
 ] (./relatorio.aux) ) 
 Here is how much of TeX's memory you used:
- 33362 strings out of 493014
- 782589 string characters out of 6133352
- 903875 words of memory out of 5000000
- 36373 multiletter control sequences out of 15000+600000
+ 33367 strings out of 493014
+ 782658 string characters out of 6133352
+ 904875 words of memory out of 5000000
+ 36377 multiletter control sequences out of 15000+600000
  44996 words of font info for 52 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
  62i,7n,83p,10415b,609s stack positions out of 5000i,500n,10000p,200000b,80000s
@@ -1462,10 +1482,10 @@ r.enc}</usr/local/texlive/2016/texmf-dist/fonts/type1/urw/times/utmb8a.pfb></us
 r/local/texlive/2016/texmf-dist/fonts/type1/urw/times/utmbi8a.pfb></usr/local/t
 exlive/2016/texmf-dist/fonts/type1/urw/times/utmr8a.pfb></usr/local/texlive/201
 6/texmf-dist/fonts/type1/urw/times/utmri8a.pfb>
-Output written on relatorio.pdf (8 pages, 289906 bytes).
+Output written on relatorio.pdf (8 pages, 378454 bytes).
 PDF statistics:
- 56 PDF objects out of 1000 (max. 8388607)
+ 58 PDF objects out of 1000 (max. 8388607)
  37 compressed objects within 1 object stream
  0 named destinations out of 1000 (max. 500000)
- 28 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 33 words of extra memory for PDF output out of 10000 (max. 10000000)
 
