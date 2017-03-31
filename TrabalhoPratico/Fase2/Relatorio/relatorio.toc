@@ -1,6 +1,8 @@
 \select@language {portuges}
 \contentsline {chapter}{\numberline {1}Introdu\IeC {\c c}\IeC {\~a}o}{1}
-\contentsline {chapter}{\numberline {2}Descri\IeC {\c c}\IeC {\~a}o do processo de Leitura }{2}
-\contentsline {chapter}{\numberline {3} Descri\IeC {\c c}\IeC {\~a}o das estruturas de dados para armazenar os Grupos}{3}
-\contentsline {chapter}{\numberline {4} Descri\IeC {\c c}\IeC {\~a}o do ciclo de rendering}{4}
-\contentsline {chapter}{\numberline {5}Conclus\IeC {\~a}o}{5}
+\contentsline {chapter}{\numberline {2}Transforma\IeC {\c c}\IeC {\~o}es Geom\IeC {\'e}tricas}{2}
+\contentsline {section}{\numberline {2.1}Descri\IeC {\c c}\IeC {\~a}o do processo de Leitura }{2}
+\contentsline {section}{\numberline {2.2} Descri\IeC {\c c}\IeC {\~a}o das estruturas de dados para armazenar os Grupos}{5}
+\contentsline {section}{\numberline {2.3} Descri\IeC {\c c}\IeC {\~a}o do ciclo de rendering}{7}
+\contentsline {chapter}{\numberline {3}Demo}{9}
+\contentsline {chapter}{\numberline {4}Conclus\IeC {\~a}o}{10}
