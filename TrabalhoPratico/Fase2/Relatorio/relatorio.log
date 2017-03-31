@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.17 (TeX Live 2016) (preloaded format=pdflatex 2017.3.9)  31 MAR 2017 17:18
+This is pdfTeX, Version 3.14159265-2.6-1.40.17 (TeX Live 2016) (preloaded format=pdflatex 2017.3.9)  31 MAR 2017 20:14
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -1518,7 +1518,7 @@ File: omsptm.fd
 )
 LaTeX Font Info:    Font shape `OMS/ptm/m/n' in size <12> not available
 (Font)              Font shape `OMS/cmsy/m/n' tried instead on input line 5.
-LaTeX Font Info:    Try loading font information for T1+pcr on input line 27.
+LaTeX Font Info:    Try loading font information for T1+pcr on input line 26.
 
 (/usr/local/texlive/2016/texmf-dist/tex/latex/psnfss/t1pcr.fd
 File: t1pcr.fd 2001/06/04 font definitions for T1/pcr.
@@ -1529,60 +1529,57 @@ File: t1pcr.fd 2001/06/04 font definitions for T1/pcr.
 File: imagens/structureComplete.jpg Graphic file (type jpg)
 
 <use imagens/structureComplete.jpg>
-Package pdftex.def Info: imagens/structureComplete.jpg used on input line 137.
+Package pdftex.def Info: imagens/structureComplete.jpg used on input line 159.
 (pdftex.def)             Requested size: 298.11302pt x 182.55658pt.
 LaTeX Font Info:    Font shape `T1/ptm/bx/n' in size <10.95> not available
-(Font)              Font shape `T1/ptm/b/n' tried instead on input line 138.
+(Font)              Font shape `T1/ptm/b/n' tried instead on input line 160.
 
-<imagens/structureCommand.jpg, id=42, 175.40532pt x 213.04594pt>
+<imagens/structureCommand.jpg, id=42, 529.98pt x 237.13594pt>
 File: imagens/structureCommand.jpg Graphic file (type jpg)
 
 <use imagens/structureCommand.jpg>
-Package pdftex.def Info: imagens/structureCommand.jpg used on input line 149.
-(pdftex.def)             Requested size: 87.70244pt x 106.5227pt.
+Package pdftex.def Info: imagens/structureCommand.jpg used on input line 169.
+(pdftex.def)             Requested size: 264.98933pt x 118.56767pt.
 
-<imagens/structureGroup.jpg, id=43, 176.15813pt x 213.04594pt>
+<imagens/structureGroup.jpg, id=43, 609.02531pt x 223.58531pt>
 File: imagens/structureGroup.jpg Graphic file (type jpg)
 
 <use imagens/structureGroup.jpg>
-Package pdftex.def Info: imagens/structureGroup.jpg used on input line 156.
-(pdftex.def)             Requested size: 88.07884pt x 106.5227pt.
-
-<imagens/structureModel.jpg, id=44, 174.6525pt x 213.04594pt>
+Package pdftex.def Info: imagens/structureGroup.jpg used on input line 178.
+(pdftex.def)             Requested size: 304.5119pt x 111.79237pt.
+ [5 <./imagens/structureComplete.jpg>]
+<imagens/structureModel.jpg, id=47, 505.13719pt x 228.10219pt>
 File: imagens/structureModel.jpg Graphic file (type jpg)
 
 <use imagens/structureModel.jpg>
-Package pdftex.def Info: imagens/structureModel.jpg used on input line 163.
-(pdftex.def)             Requested size: 87.32603pt x 106.5227pt.
-
-<imagens/structureScene.jpg, id=45, 176.15813pt x 213.79875pt>
-File: imagens/structureScene.jpg Graphic file (type jpg)
-
-<use imagens/structureScene.jpg>
-Package pdftex.def Info: imagens/structureScene.jpg used on input line 170.
-(pdftex.def)             Requested size: 88.07884pt x 106.89911pt.
- [5 <./imagens/structureComplete.jpg> <./imagens/structureCommand.jpg> <./image
-ns/structureGroup.jpg>] [6 <./imagens/structureModel.jpg> <./imagens/structureS
-cene.jpg>] [7] [8]
+Package pdftex.def Info: imagens/structureModel.jpg used on input line 187.
+(pdftex.def)             Requested size: 252.56798pt x 114.0508pt.
+ [6 <./imagens/structureCommand.jpg> <./imagens/structureGroup.jpg> <./imagens/
+structureModel.jpg>] [7] [8]
 Cap\'{\i }tulo 3.
-<sistemasolar.png, id=58, 427.5975pt x 171.64125pt>
-File: sistemasolar.png Graphic file (type png)
- <use sistemasolar.png>
-Package pdftex.def Info: sistemasolar.png used on input line 289.
-(pdftex.def)             Requested size: 213.79822pt x 85.8204pt.
-)
-(./chapters/conclusao.tex [9
+<imagens/solarsystem.png, id=57, 1927.2pt x 1084.05pt>
+File: imagens/solarsystem.png Graphic file (type png)
 
- <./sistemasolar.png>]
+<use imagens/solarsystem.png>
+Package pdftex.def Info: imagens/solarsystem.png used on input line 265.
+(pdftex.def)             Requested size: 471.21242pt x 265.05698pt.
+
+Overfull \hbox (15.9683pt too wide) in paragraph at lines 265--266
+ [][] 
+ []
+
+) (./chapters/conclusao.tex [9
+
+ <./imagens/solarsystem.png>]
 Cap\'{\i }tulo 4.
 ) [10
 
 ] (./relatorio.aux) ) 
 Here is how much of TeX's memory you used:
- 33639 strings out of 493014
- 787100 string characters out of 6133352
- 913590 words of memory out of 5000000
- 36626 multiletter control sequences out of 15000+600000
+ 33633 strings out of 493014
+ 786960 string characters out of 6133352
+ 913580 words of memory out of 5000000
+ 36621 multiletter control sequences out of 15000+600000
  48420 words of font info for 56 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
  62i,7n,83p,10415b,609s stack positions out of 5000i,500n,10000p,200000b,80000s
@@ -1593,10 +1590,10 @@ sr/local/texlive/2016/texmf-dist/fonts/type1/urw/times/utmb8a.pfb></usr/local/t
 exlive/2016/texmf-dist/fonts/type1/urw/times/utmbi8a.pfb></usr/local/texlive/20
 16/texmf-dist/fonts/type1/urw/times/utmr8a.pfb></usr/local/texlive/2016/texmf-d
 ist/fonts/type1/urw/times/utmri8a.pfb>
-Output written on relatorio.pdf (13 pages, 574154 bytes).
+Output written on relatorio.pdf (13 pages, 680314 bytes).
 PDF statistics:
- 89 PDF objects out of 1000 (max. 8388607)
+ 88 PDF objects out of 1000 (max. 8388607)
  54 compressed objects within 1 object stream
  0 named destinations out of 1000 (max. 500000)
- 63 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 58 words of extra memory for PDF output out of 10000 (max. 10000000)
 
