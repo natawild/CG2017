@@ -1,0 +1,162 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<xml>
+    <scene>
+        <group>
+            <translate x='0' y='0' z='0'/> SOL
+			<color r='0.0' g='0.5' b='0.5'/>
+            <group>
+				<color r='1.0' g='0.8' b='0.3'/>
+                <scale x='14.34375' y='14.34375' z='14.34375'/>
+                <model file='sphere.3d'/>
+            </group>
+        </group>
+        <group>
+			<color r='0.5' g='0.5' b='0.5'/>
+            <translate x='17.791' y='0' z='0'/> MERCURIO
+            <group>
+                <scale x='0.2439' y='0.2439' z='0.2439'/>
+                <model file='sphere.3d'/>
+            </group>
+        </group>
+        <group>
+            <translate x='22.820' y='0' z='0'/> VENUS
+            <group>
+				<color r='1.0' g='1.0' b='0.2'/>
+                <scale x='0.6051' y='0.6051' z='0.6051'/>
+                <model file='sphere.3d'/>
+            </group>
+        </group>
+        <group>
+			<color r='0.0' g='0.75' b='1.0'/>
+            <translate x='26.960' y='0' z='0'/> TERRA
+            <group>
+                <scale x='0.6378' y='0.6378' z='0.6378'/>
+                <model file='sphere.3d'/>
+            </group>
+            <group>
+				<color r='0.3' g='0.3' b='0.5'/>
+                <translate x='-0.8' y='0.30' z='0'/>  LUA
+                <group>
+                    <scale x='0.17374' y='0.17374' z='0.17374'/>
+                    <model file='sphere.3d'/>
+                </group>
+            </group>
+        </group>
+        <group>
+            <translate x='34.794' y='0' z='0'/> MARTE
+			<color r='0.7' g='0.13' b='0.13'/>
+            <scale x='0.3397' y='0.3397' z='0.3397'/>
+            <model file='sphere.3d'/>
+        </group>
+        <group>
+            <translate x='59.833' y='0' z='0'/> JUPITER
+            <group>
+				<color r='1.0' g='0.55' b='0.0'/>
+                <scale x='7.1492' y='7.1492' z='7.1492'/>
+                <model file='sphere.3d'/>
+            </group>
+            <group>
+				<color r='1.0' g='1.0' b='0.2'/>
+                <translate x='8' y='1.30' z='2'/>  L_IO
+                <group>
+                    <scale x='0.17374' y='0.17374' z='0.17374'/>
+                    <model file='sphere.3d'/>
+                </group>
+            </group>
+            <group>
+                <translate x='8' y='-2.3' z='0'/>  L_EUROPA
+                <group>
+                    <scale x='0.15374' y='0.15374' z='0.15374'/>
+                    <model file='sphere.3d'/>
+                </group>
+            </group>
+            <group>
+                <translate x='8' y='2.3' z='-2'/>  L_GANIMED
+                <group>
+                    <scale x='0.32374' y='0.32374' z='0.32374'/>
+                    <model file='sphere.3d'/>
+                </group>
+            </group>
+            <group>
+                <translate x='-7' y='-5.30' z='2'/>  L_CALIST
+                <group>
+                    <scale x='0.25374' y='0.25374' z='0.25374'/>
+                    <model file='sphere.3d'/>
+                </group>
+            </group>
+        </group>
+        <group>
+            <translate x='85.940' y='0' z='0'/> SATURNO
+            <rotate angle='30' x='1' y='0' z='0'/>
+            <group>
+				<color r='1.0' g='0.84' b='0.3'/>
+                <scale x='6.0268' y='6.0268' z='6.0268'/>
+                <model file='sphere.3d'/>
+            </group>
+            <group>
+                <translate x='7.22' y='4.0' z='-1'/>  L_TITA
+				<color r='1.0' g='1.0' b='0.2'/>
+                <group>
+                    <scale x='0.25374' y='0.25374' z='0.25374'/>
+                    <model file='sphere.3d'/>
+                </group>
+            </group>
+            <group>
+				<color r='1.0' g='0.0' b='0.0'/>
+                <group>
+                    <scale x='6.5' y='6.5' z='8'/> ring CIMA
+                    <model file='ring.3d'/>
+					<rotate angle='180.0' x='1' y='0' z='0'/> ring BAIXO
+                    <model file='ring.3d'/>
+                </group>
+            </group>
+        </group>
+        <group>
+            <translate x='108.099' y='0' z='0'/> URANO
+            <group>
+				<color r='0.88' g='1.0' b='1.0'/>
+                <scale x='5.1108' y='5.1108' z='5.1108'/>
+                <model file='sphere.3d'/>
+            </group>
+            <group>
+				<color r='1.0' g='1.0' b='0.2'/>
+                <translate x='7' y='-1' z='-1'/> L_UMBRIEL
+                <group>
+                    <scale x='0.10374' y='0.10374' z='0.10374'/>
+                    <model file='sphere.3d'/>
+                </group>
+            </group>
+            <group>
+                <translate x='6.5' y='-1' z='-1'/> L_TITANIA
+                <group>
+                    <scale x='0.10374' y='0.10374' z='0.10374'/>
+                    <model file='sphere.3d'/>
+                </group>
+            </group>
+            <group>
+                <translate x='6.7' y='-1' z='-1'/> L_OBERON
+                <group>
+                    <scale x='0.10374' y='0.10374' z='0.10374'/>
+                    <model file='sphere.3d'/>
+                </group>
+            </group>
+        </group>
+        <group>
+            <translate x='124.352' y='0' z='0'/> NEPTUNO
+            <group>
+				<color r='0.53' g='0.81' b='0.98'/>
+                <scale x='4.9538' y='4.9538' z='4.9538'/>
+                <model file='sphere.3d'/>
+            </group>
+            <group>
+                <translate x='6' y='-1' z='-1'/> L_TRITAO
+                <group>
+					<color r='1.0' g='1.0' b='0.2'/>
+                    <scale x='0.17374' y='0.17374' z='0.17374'/>
+                    <model file='sphere.3d'/>
+                </group>
+            </group>
+        </group>
+
+    </scene>
+</xml>
