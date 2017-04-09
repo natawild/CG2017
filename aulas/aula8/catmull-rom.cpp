@@ -26,9 +26,8 @@ void buildRotMatrix(float *x, float *y, float *z, float *m) {
 	m[12] = 0; m[13] = 0; m[14] = 0; m[15] = 1;
 }
 
-
+//faz o produto externo
 void cross(float *a, float *b, float *res) {
-
 	res[0] = a[1]*b[2] - a[2]*b[1];
 	res[1] = a[2]*b[0] - a[0]*b[2];
 	res[2] = a[0]*b[1] - a[1]*b[0];
@@ -36,7 +35,6 @@ void cross(float *a, float *b, float *res) {
 
 
 void normalize(float *a) {
-
 	float l = sqrt(a[0]*a[0] + a[1] * a[1] + a[2] * a[2]);
 	a[0] = a[0]/l;
 	a[1] = a[1]/l;
@@ -45,25 +43,27 @@ void normalize(float *a) {
 
 
 float length(float *v) {
-
 	float res = sqrt(v[0]*v[0] + v[1]*v[1] + v[2]*v[2]);
 	return res;
 
 }
 
+//multiplica matrizes
 void multMatrixVector(float *m, float *v, float *res) {
-
 	for (int j = 0; j < 4; ++j) {
 		res[j] = 0;
 		for (int k = 0; k < 4; ++k) {
 			res[j] += v[k] * m[j * 4 + k];
 		}
 	}
-
 }
 
 
 void getCatmullRomPoint(float t, float *p0, float *p1, float *p2, float *p3, float *res, float *deriv) {
+	int i;
+	int l,c,k;
+	int indices[4];
+	float a[4];
 
 	// catmull-rom matrix
 	float m[4][4] = {	{-0.5f,  1.5f, -1.5f,  0.5f},
@@ -76,12 +76,30 @@ void getCatmullRomPoint(float t, float *p0, float *p1, float *p2, float *p3, flo
 	deriv[0] = 0.0; deriv[1] = 0.0; deriv[2] = 0.0;
 	
 	// Compute A = M * P
+
+	a[0]= multMatrixVector(m, vetor, res);
+	a[1]=multMatrixVector(m, vector , res);
+	a[2]=multMatrixVector(m, vector , res);
+	for(l=0; l<4; l++){//percorre as linhas
+		for(c=0; c<4;c++){//percorre as colunas
+			for(k=0; k<4;k++) {//anda com o que muda na linha e na coluna
+				a[l] += m[l][k] * p[k][c];
+			}
+		}
+	}
 	
 	// Compute point res = T *A
+	for (i=0; i<4; i++)
+		res[i]= pow(t,3) * m[0][i] + pow(t,2) * m[1][i] +  t * m[2][i] + m[3][i];
+
 	
 	// compute deriv = T' * A
+	for (i=0; i<4; i++)
+		deriv[i]= 3*pow(t,2) * m[0][i] +  2*t * m[1][i] + m[2][i];
 
-	// ...
+
+	//calculo do res
+
 }
 
 
@@ -129,8 +147,15 @@ void changeSize(int w, int h) {
 
 
 void renderCatmullRomCurve() {
-
 // desenhar a curva usando segmentos de reta - GL_LINE_LOOP
+	float res[3];
+	float deriv[2];
+	glBegin(GL_LINE_LOOP);
+	for(float a=0; a<1; a+=0.001) {
+		getGlobalCatmullRomPoint(a,res,deriv);
+		glVertex3f(res[0],res[1],res[2]);
+	}
+	glEnd();
 }
 
 
@@ -138,6 +163,7 @@ void renderScene(void) {
 
 	static float t = 0;
 	float res[3];
+	float deriv[2];
 
 	glClearColor(0.0f,0.0f,0.0f,0.0f);
 	glClear(GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT);
@@ -147,11 +173,27 @@ void renderScene(void) {
 		      0.0,0.0,0.0,
 			  0.0f,1.0f,0.0f);
 
-	renderCatmullRomCurve();
 
 	// apply transformations here
 	// ...
+	renderCatmullRomCurve();
+
+	glPushMatrix();
+	getGlobalCatmullRomPoint(t,res,deriv);
+	glTranslatef(res[0],res[1],res[2]);
+	glScalef(0.1, 0.1, 0.1);
 	glutWireTeapot(0.1);
+	glPopMatrix();
+
+	// End of frame
+	glutSwapBuffers();
+
+	t-=0.001;
+
+
+
+
+
 
 
 	glutSwapBuffers();
@@ -225,7 +267,7 @@ void processMouseMotion(int xx, int yy)
 }
 
 
-void main(int argc, char **argv) {
+int main(int argc, char **argv) {
 
 // inicialization
 	glutInit(&argc, argv);
