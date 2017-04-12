@@ -1,0 +1,20 @@
+\chapter{VBOs}
+Uma das melhorias desta fase em relação à primeira foi a introdução de VBOs no projeto. Com isto a criação das variadas figuras geométricas torna-se  mais eficiente.
+
+
+\chapter{Curvas de Catmull-Rom}
+
+As translações à volta de um ponto, que são usadas para os planetas à volta do sol, e os satélites  à volta dos planetas têm por base curvas de \textit{Catmull-Rom}. Para tal, são definidos pelo menos quatro pontos de controlo no \textit{xml} e, a cada instante, o objeto é deslocado para a próxima posição nessa curva.
+
+\chapter{Superfícies de Bezier}
+Nesta terceira fase foi proposta a criação de Superfícies de \textit{Bezier}, através de um fiheiro passado como argumento, com as \textit{patches} e os \textit{control points} necessários para a criação desta superfície, com o qual o \textit{generator} deve criar a lista de vértices necessários para a criação da superfíie. Para ser possível criar as superfícies teve de se fazer algumas alterações no \textit{generator}, uma nova estrutura de dados para guardar os dados do ficheiro passado como argumento, e a criação de novas funções que permitam gerar os vértices pretendidos. Iremos falar em seguida sobre ambos.
+
+\section{Ficheiro}
+
+
+\section{Estrutura de dados - PatchPoints}
+
+\section{Criação da Superfície}
+
+
+\chapter{Demo}
