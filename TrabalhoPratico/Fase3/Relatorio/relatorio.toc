@@ -2,9 +2,10 @@
 \contentsline {chapter}{\numberline {1}Introdu\IeC {\c c}\IeC {\~a}o}{1}
 \contentsline {chapter}{\numberline {2}VBOs}{2}
 \contentsline {chapter}{\numberline {3}Curvas de Catmull-Rom}{3}
-\contentsline {chapter}{\numberline {4}Superf\IeC {\'\i }cies de Bezier}{4}
-\contentsline {section}{\numberline {4.1}Ficheiro}{4}
-\contentsline {section}{\numberline {4.2}Estrutura de dados - PatchPoints}{4}
-\contentsline {section}{\numberline {4.3}Cria\IeC {\c c}\IeC {\~a}o da Superf\IeC {\'\i }cie}{4}
-\contentsline {chapter}{\numberline {5}Demo}{5}
-\contentsline {chapter}{\numberline {6}Conclus\IeC {\~a}o}{6}
+\contentsline {section}{\numberline {3.1}Transla\IeC {\c c}\IeC {\~o}es }{3}
+\contentsline {chapter}{\numberline {4}Rota\IeC {\c c}\IeC {\~o}es}{4}
+\contentsline {chapter}{\numberline {5}Superf\IeC {\'\i }cies de Bezier}{5}
+\contentsline {section}{\numberline {5.1}Ficheiro}{5}
+\contentsline {section}{\numberline {5.2}Cria\IeC {\c c}\IeC {\~a}o da Superf\IeC {\'\i }cie}{6}
+\contentsline {chapter}{\numberline {6}Demo}{7}
+\contentsline {chapter}{\numberline {7}Conclus\IeC {\~a}o}{8}
