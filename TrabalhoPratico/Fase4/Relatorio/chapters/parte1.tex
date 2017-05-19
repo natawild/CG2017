@@ -1,0 +1,62 @@
+\chapter{Iluminação}
+
+Com o objetivo de obter mais dinamismo do cenário, implementou-se iluminação. Para tal, e como todas as figuras estão a ser geradas ponto a ponto, sem recurso aos modelos já oferecidos pelo \textit{OpenGL}, foi preciso especificar as normais de cada objeto. Além disso, foi necessário expandir as funcionalidades do \textit{xml} para obter informação relativamente aos materiais dos objetos, ou seja a forma como reagem com a luz, bem como as luzes em si.
+
+
+\section{Luzes }
+
+De forma a manter a simplicidade do código, criou-se uma nova classe Light que detém a posiçãoo da mesma. Esta define valores genéricos para as componentes difusa e ambiente, apesar de ser relativamente fácil obter estes a partir do xml tal como será abordado nos materiais pois essa funcionalidade foi utilizada lá.
+A classe Group detém portanto um conjunto de luzes. que são desenhadas antes dos objetos do mesmo grupo. Utilizou-se sá uma luz para evitar aumentar a complexididade do sistema, como tal só se faz enable a lightning e light0.
+
+
+\section{Materiais}
+
+De forma a ajustar como os objetos reagem à luz, foi necessário introduzir materiais. Para tal criou-se uma nova classe Material para albergar todas as informações necessárias que são as cores RGB para as componentes ambiente, difusa, especular e emissiva.
+O XMLParser proporciona portanto novas funções para extrair cada uma das componentes do .xml, colocando como placeholders 0.2 para cada cor ambiente, 0.8 para difusa, e 0 para as restantes. Para o sol utilizou-se as propriedades difusas a 0 e as emissivas a 1 para
+poder ser visível apesar da luz estar no seu interior e portanto não o afetar.
+
+
+\section{Normais}
+
+As normais servirão para se ativar a funcionalidade de iluminação de cada figura geométrica. É graças a estas que é possével determinar o ângulo de incidência da luz e como tal variar a intensidade observada.
+Foi necessário adicionar o glEnable(GL NORMALIZE) para recalcular as normais após um \textit{glScale}.
+
+
+\subsection{Esfera}
+
+
+Para a Esfera, as normais são os próprios pontos. Como as normais são um vetor não se torna necessário retirar o raio dos pontos. Desta forma, como as coordenadas do ponto são relativas ao seu centro, é exatamente esse vetor que define a sua normal.
+
+\subsection{Plano}
+As normais do plano criado na horizontal, ou seja em que o y não varia,
+são fáceis de se calcular. As normais dos quatro vértices do apontam para 0 1 0.
+
+\subsection{Box}
+Para as normais dos oito vértices da box temos de ter em mente que cada vértice vai ter três normais diferentes, referente às três faces da box que estes fazem parte. Por isso especificou-se as normais por face. Cada face tem portanto as normais à semelhança do plano, com só uma das coordenadas a 1 e as outras a 0.
+
+\subsection{Cone}
+É preciso ter-se em atenção os ângulos dos diversos pontos do Cone.
+Conseguindo-se desenhar o Cone a diferençaa do x e z dos diversos pontos e as suas respectivas normais é  que só precisamos dos senos e cosenos, não os multiplicamos pelo raio. Os y de todas as normais calculam-se da mesma maneira: divisão entre a altura do cone e a raiz quadrada entre a soma do quadrado da altura com o quadrado do raio.
+
+
+\subsection{Torus}
+
+Antes de calcular as normais do tórus, é necessário perceber o que deve ser esperado. Como não se estão a implementar sombras (uma objeto à frente da luz, escurecer o que está a trás de si, um tórus quando horizontal perante a luz, deve ter 2 superficies iluminadas. Ou seja, ao contrário de uma esfera que os seus vetores são relativos ao ponto central, um tórus deve ser analisado como um cilindro em que os vetores são relativos ao eixo à volta. Desta forma, consegue-se obter simultaneamente a parte exterior e interior
+iluminada de acordo com a posiçõa da luz.
+
+
+\subsection{Superficies de Bezier}
+
+O vector da normal em qualquer ponto da Superfície é definido pelo produto cruzado dos vetores das tangentes normalizadas.”, ou seja, começa-se por calcular as tangentes em u e em v normalizando-se em seguida os vetores, por fim, faz-se o produto cruzado entre os dois vetores e obtem-se uma normal.
+
+
+Para calcular as tangentes usa-se uma função que recebe como argumentos o valor de u e v a matriz m os pontos da patch de bezier e um inteiro de serve para indicar se estamos a calcular em u ou em v, esta funçao devolve-nos um ponto, referente a x, y ou z que é passado na matrix p.
+Cross e normalize, assim como o nome indica são as funções do cálculo do produto cruzado e da normaliza¸c˜ao. De real¸car que para a normalização, verifica-se se o divisor é diferente de 0, pois se for 0 será devolvido o erro de not a number, pois é impossivel dividir por zero.
+A funçãoo bezierTangent calcula os diversos pontos em u e em v. De realçar que os pontos são guardados numa queue de nome derivada para serem posteriormente escritos no ficheiro .3d.
+
+
+
+\section{Texturas}
+
+
+As texturas são só obtidas quando no xml se pode encontrar um atributo texture num file e para as representar deveria-se ter utilizado uma classe Texture para não sobrecarregar o Group.
