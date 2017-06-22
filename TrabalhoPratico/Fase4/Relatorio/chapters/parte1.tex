@@ -2,34 +2,119 @@
 
 Com o objetivo de obter mais dinamismo do cenário, implementou-se iluminação. Para tal, e como todas as figuras estão a ser geradas ponto a ponto, sem recurso aos modelos já oferecidos pelo \textit{OpenGL}, foi preciso especificar as normais de cada objeto. Além disso, foi necessário expandir as funcionalidades do \textit{xml} para obter informação relativamente aos materiais dos objetos, ou seja a forma como reagem com a luz, bem como as luzes em si.
 
+É com os vetores das normais que nós definimos como  a luz é refletida por determinado objeto, isto é, com a emissão da luz de determinado ponto é necessário saber se quando esta luz atinge o objeto como é que o ilumina.
+Quando falamos de iluminação o existem vários tipos de iluminação que podemos usar para iluminar um objeto:
+
+\begin{itemize}
+	\item Difusa;
+	\item Ambiente;
+	\item Especular;
+	\item Emissiva;
+\end{itemize}
+
 
 \section{Luzes }
 
-De forma a manter a simplicidade do código, criou-se uma nova classe Light que detém a posiçãoo da mesma. Esta define valores genéricos para as componentes difusa e ambiente, apesar de ser relativamente fácil obter estes a partir do xml tal como será abordado nos materiais pois essa funcionalidade foi utilizada lá.
-A classe Group detém portanto um conjunto de luzes. que são desenhadas antes dos objetos do mesmo grupo. Utilizou-se sá uma luz para evitar aumentar a complexididade do sistema, como tal só se faz enable a lightning e light0.
+No nosso caso, fizemos a implementação que permite a um dado objeto ser incidido com um dos tipos de luz, para tal, temos no \textit{xml} a \textit{tag} luz.
+Na \textit{tag} luzes definimos os tipos de luzes que são aplicadas ao planetas quando este recebem a luz que é emitida pelo sol, pois no sistema solar o sol não é ”iluminado”, mas sim uma fonte de luz. Para definirmos a luz no sol usamos pontos que se encontram ”dentro” da área representada pelo sol no \textit{xml}.
+portanto um conjunto de luzes. que são desenhadas antes dos objetos do mesmo grupo. Utilizar-se-á uma luz para evitar aumentar a complexididade do sistema, como tal só se faz \textit{enable} a \textit{lightning} e \textit{light0}.
 
 
 \section{Materiais}
 
-De forma a ajustar como os objetos reagem à luz, foi necessário introduzir materiais. Para tal criou-se uma nova classe Material para albergar todas as informações necessárias que são as cores RGB para as componentes ambiente, difusa, especular e emissiva.
-O XMLParser proporciona portanto novas funções para extrair cada uma das componentes do .xml, colocando como placeholders 0.2 para cada cor ambiente, 0.8 para difusa, e 0 para as restantes. Para o sol utilizou-se as propriedades difusas a 0 e as emissivas a 1 para
-poder ser visível apesar da luz estar no seu interior e portanto não o afetar.
+De forma a ajustar como os objetos reagem à luz, foi necessário introduzir materiais. 
+
+Os materiais são diferentes, pois nos materiais temos que cada modelo possui o seu próprio material. Para isso definimos uma  estrutura de dados que nos permite aramazenar as características que cada modelo tem para o material, isto é, para cada material temos de armazenar o modelo em causa, qual o material associado a esse modelo, qual a cor desse
+modelo. 
 
 
 \section{Normais}
 
 As normais servirão para se ativar a funcionalidade de iluminação de cada figura geométrica. É graças a estas que é possével determinar o ângulo de incidência da luz e como tal variar a intensidade observada.
-Foi necessário adicionar o glEnable(GL NORMALIZE) para recalcular as normais após um \textit{glScale}.
+Foi necessário adicionar o glEnable(GL\_NORMALIZE) para recalcular as normais após um \textit{glScale}.
 
 
 \subsection{Esfera}
 
-
 Para a Esfera, as normais são os próprios pontos. Como as normais são um vetor não se torna necessário retirar o raio dos pontos. Desta forma, como as coordenadas do ponto são relativas ao seu centro, é exatamente esse vetor que define a sua normal.
 
+\begin{verbatim}
+int drawSphere_VBO(float radius, float centerX, float centerY, 
+float centerZ, int stacks, int slices, Ponto3D points, int* indexes, 
+Ponto3D normals){
+
+// calculo do angulo de cada slice e stack, pasado para radianos
+divBeta = (360.0f / (float) slices) * M_PI / 180.0f;
+divAlpha = M_PI / (float) stacks; 	// == (180.0f / (float) stacks) * M_PI / 180.0f;
+
+// criação dos arrays com os angulos todos os slices e stacks sendo que os iniciais sao predefinidos
+// os angulos alpha (do Norte ao sul) começam em 90 e vao até -90, i.e., PI/2 e vão até -PI/2
+alphas[0] = M_PI / 2.0f;
+alphas[stacks] = - M_PI / 2.0f;
+// os angulos beta (horizontal) começam no 0 até 360, i.e., de 0 a 2PI
+betas[0] = 0;
+betas[slices] = 0;
+
+for(i = 1;i < slices;i++)
+betas[i] = betas[i-1] + divBeta;
+for(i = 1;i < stacks;i++)
+alphas[i] = alphas[i-1] - divAlpha;
+
+// Triangulos do topo da esfera
+stHeightDown = radius * sin(alphas[1]);
+stHeightUp = radius * sin(alphas[stacks - 1]);	
+radDown = radius * cos(alphas[1]);
+radUp = radius * cos(alphas[stacks - 1]);	
+     Calcula o ponto do topo da esfera; 
+     Calcula a normal nesse ponto; 
+     Calcula o segundo ponto  esfera; 
+     Calcula a normal nesse ponto; 
+     Guarda pontos e normais; 
+indp += 2;
+for(i = 1;i < slices; i++) {
+    Calcula o ponto seguinte da stack da esfera;
+    Guarda o ponto; 
+    Calcula a normal para esse ponto; 
+     Guarda a normal calculada 
+      Incrementa o indice; 
+       Desenha triâgulo; 
+      Incrementa o indice dos indices; 
+}
+   desenha o último triangulo da stack; 
+   Incrementa o indice dos indices; 
+
+// resto da esfera
+ for(i = 2;i < stacks;i++){
+     Calcula o ponto seguinte da stack da esfera;
+     Guarda o ponto; 
+ for(j = 1;j < slices;j++) {
+      Calcula as normais dos quadrados a desenhar 
+       desenha quadrado ; 
+       indi += 6;
+  }
+     desenha quadrado ; 
+    indi += 6;
+}
+
+// Triangulos da base da esfera
+stHeightUp = radius * sin(alphas[stacks - 1]);
+radUp = radius * cos(alphas[stacks - 1]);
+  Calcula o ponto do topo da esfera; 
+   Calcula a normal nesse ponto; 
+indp++;
+for(i = 1;i < slices; i++) {
+  desenha triangulo; 
+  indi += 3;
+}
+  desenha triangulo ; 
+  indi += 3;
+return indp;
+}
+\end{verbatim}
+
+
 \subsection{Plano}
-As normais do plano criado na horizontal, ou seja em que o y não varia,
-são fáceis de se calcular. As normais dos quatro vértices do apontam para 0 1 0.
+As normais do plano criado na horizontal, ou seja em que o y não varia, são fáceis de se calcular. As normais dos quatro vértices do apontam para 0 1 0.
 
 \subsection{Box}
 Para as normais dos oito vértices da box temos de ter em mente que cada vértice vai ter três normais diferentes, referente às três faces da box que estes fazem parte. Por isso especificou-se as normais por face. Cada face tem portanto as normais à semelhança do plano, com só uma das coordenadas a 1 e as outras a 0.
@@ -42,21 +127,19 @@ Conseguindo-se desenhar o Cone a diferençaa do x e z dos diversos pontos e as s
 \subsection{Torus}
 
 Antes de calcular as normais do tórus, é necessário perceber o que deve ser esperado. Como não se estão a implementar sombras (uma objeto à frente da luz, escurecer o que está a trás de si, um tórus quando horizontal perante a luz, deve ter 2 superficies iluminadas. Ou seja, ao contrário de uma esfera que os seus vetores são relativos ao ponto central, um tórus deve ser analisado como um cilindro em que os vetores são relativos ao eixo à volta. Desta forma, consegue-se obter simultaneamente a parte exterior e interior
-iluminada de acordo com a posiçõa da luz.
+iluminada de acordo com a posição da luz.
 
-
-\subsection{Superficies de Bezier}
-
-O vector da normal em qualquer ponto da Superfície é definido pelo produto cruzado dos vetores das tangentes normalizadas.”, ou seja, começa-se por calcular as tangentes em u e em v normalizando-se em seguida os vetores, por fim, faz-se o produto cruzado entre os dois vetores e obtem-se uma normal.
-
-
-Para calcular as tangentes usa-se uma função que recebe como argumentos o valor de u e v a matriz m os pontos da patch de bezier e um inteiro de serve para indicar se estamos a calcular em u ou em v, esta funçao devolve-nos um ponto, referente a x, y ou z que é passado na matrix p.
-Cross e normalize, assim como o nome indica são as funções do cálculo do produto cruzado e da normaliza¸c˜ao. De real¸car que para a normalização, verifica-se se o divisor é diferente de 0, pois se for 0 será devolvido o erro de not a number, pois é impossivel dividir por zero.
-A funçãoo bezierTangent calcula os diversos pontos em u e em v. De realçar que os pontos são guardados numa queue de nome derivada para serem posteriormente escritos no ficheiro .3d.
 
 
 
 \section{Texturas}
 
+As texturas são armazenadas de modo a que quando o ficheiro é lido saber o tipo de textura que o objeto vai ter.
 
-As texturas são só obtidas quando no xml se pode encontrar um atributo texture num file e para as representar deveria-se ter utilizado uma classe Texture para não sobrecarregar o Group.
+
+Nas texturas  temos duas vertentes, isto é, temos a aplicação de uma imagem como textura, mas temos também uma vertente, que é a definição do sistema solar que não é definir as texturas como imagens, mas sim ter uma espécie de material, isto é ter o sistema solar em que cada planeta possui um material definido por nós.
+O carregar de uma textura é feito através da leitura no \textit{xml}de um campo textura que indica o nome da textura a carregar.
+
+
+
+

@@ -3,12 +3,11 @@
 \contentsline {chapter}{\numberline {2}Ilumina\IeC {\c c}\IeC {\~a}o}{2}
 \contentsline {section}{\numberline {2.1}Luzes }{2}
 \contentsline {section}{\numberline {2.2}Materiais}{2}
-\contentsline {section}{\numberline {2.3}Normais}{2}
-\contentsline {subsection}{\numberline {2.3.1}Esfera}{2}
-\contentsline {subsection}{\numberline {2.3.2}Plano}{3}
-\contentsline {subsection}{\numberline {2.3.3}Box}{3}
-\contentsline {subsection}{\numberline {2.3.4}Cone}{3}
-\contentsline {subsection}{\numberline {2.3.5}Torus}{3}
-\contentsline {subsection}{\numberline {2.3.6}Superficies de Bezier}{3}
-\contentsline {section}{\numberline {2.4}Texturas}{3}
-\contentsline {chapter}{\numberline {3}Conclus\IeC {\~a}o}{4}
+\contentsline {section}{\numberline {2.3}Normais}{3}
+\contentsline {subsection}{\numberline {2.3.1}Esfera}{3}
+\contentsline {subsection}{\numberline {2.3.2}Plano}{4}
+\contentsline {subsection}{\numberline {2.3.3}Box}{4}
+\contentsline {subsection}{\numberline {2.3.4}Cone}{5}
+\contentsline {subsection}{\numberline {2.3.5}Torus}{5}
+\contentsline {section}{\numberline {2.4}Texturas}{5}
+\contentsline {chapter}{\numberline {3}Conclus\IeC {\~a}o}{6}

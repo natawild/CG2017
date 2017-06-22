@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.17 (TeX Live 2016) (preloaded format=pdflatex 2017.3.9)  19 MAY 2017 10:14
+This is pdfTeX, Version 3.14159265-2.6-1.40.17 (TeX Live 2016) (preloaded format=pdflatex 2017.3.9)  22 MAY 2017 00:01
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -1514,32 +1514,81 @@ Cap\'{\i }tulo 1.
 
 ]
 Cap\'{\i }tulo 2.
-LaTeX Font Info:    Font shape `T1/ptm/bx/n' in size <14.4> not available
-(Font)              Font shape `T1/ptm/b/n' tried instead on input line 25.
-[2
+LaTeX Font Info:    Try loading font information for OMS+ptm on input line 9.
+(/usr/local/texlive/2016/texmf-dist/tex/latex/psnfss/omsptm.fd
+File: omsptm.fd 
+)
+LaTeX Font Info:    Font shape `OMS/ptm/m/n' in size <12> not available
+(Font)              Font shape `OMS/cmsy/m/n' tried instead on input line 9.
+ [2
 
-]) (./chapters/conclusao.tex [3]
+]
+LaTeX Font Info:    Font shape `T1/ptm/bx/n' in size <14.4> not available
+(Font)              Font shape `T1/ptm/b/n' tried instead on input line 37.
+LaTeX Font Info:    Try loading font information for T1+pcr on input line 41.
+
+(/usr/local/texlive/2016/texmf-dist/tex/latex/psnfss/t1pcr.fd
+File: t1pcr.fd 2001/06/04 font definitions for T1/pcr.
+)
+Overfull \hbox (34.35568pt too wide) in paragraph at lines 113--113
+[]\T1/pcr/m/n/12 float centerZ, int stacks, int slices, Ponto3D points, int* in
+dexes,[] 
+ []
+
+
+Overfull \hbox (5.5557pt too wide) in paragraph at lines 113--113
+[]\T1/pcr/m/n/12 // calculo do angulo de cada slice e stack, pasado para radian
+os[] 
+ []
+
+
+Overfull \hbox (142.35564pt too wide) in paragraph at lines 113--113
+[]\T1/pcr/m/n/12 divAlpha = M_PI / (float) stacks;  // == (180.0f / (float) sta
+cks) * M_PI / 180.0f;[] 
+ []
+
+
+Overfull \hbox (264.75558pt too wide) in paragraph at lines 113--113
+[]\T1/pcr/m/n/12 // criação dos arrays com os angulos todos os slices e stacks 
+sendo que os iniciais sao predefinidos[] 
+ []
+
+
+Overfull \hbox (214.3556pt too wide) in paragraph at lines 113--113
+[]\T1/pcr/m/n/12 // os angulos alpha (do Norte ao sul) começam em 90 e vao até 
+-90, i.e., PI/2 e vão até -PI/2[] 
+ []
+
+
+Overfull \hbox (48.75568pt too wide) in paragraph at lines 113--113
+[]\T1/pcr/m/n/12 // os angulos beta (horizontal) começam no 0 até 360, i.e., de
+ 0 a 2PI[] 
+ []
+
+[3] [4]) (./chapters/conclusao.tex [5]
 Cap\'{\i }tulo 3.
-) [4
+) [6
 
 ] (./relatorio.aux) ) 
 Here is how much of TeX's memory you used:
- 33552 strings out of 493014
- 785352 string characters out of 6133352
- 912530 words of memory out of 5000000
- 36553 multiletter control sequences out of 15000+600000
- 50602 words of font info for 56 fonts, out of 8000000 for 9000
+ 33599 strings out of 493014
+ 786083 string characters out of 6133352
+ 913527 words of memory out of 5000000
+ 36592 multiletter control sequences out of 15000+600000
+ 51223 words of font info for 58 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
  62i,7n,83p,10415b,609s stack positions out of 5000i,500n,10000p,200000b,80000s
 {/usr/local/texlive/2016/texmf-dist/fonts/enc/dvips/base/8
-r.enc}</usr/local/texlive/2016/texmf-dist/fonts/type1/urw/times/utmb8a.pfb></us
-r/local/texlive/2016/texmf-dist/fonts/type1/urw/times/utmbi8a.pfb></usr/local/t
-exlive/2016/texmf-dist/fonts/type1/urw/times/utmr8a.pfb></usr/local/texlive/201
-6/texmf-dist/fonts/type1/urw/times/utmri8a.pfb>
-Output written on relatorio.pdf (7 pages, 381833 bytes).
+r.enc}</usr/local/texlive/2016/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10
+.pfb></usr/local/texlive/2016/texmf-dist/fonts/type1/urw/courier/ucrr8a.pfb></u
+sr/local/texlive/2016/texmf-dist/fonts/type1/urw/times/utmb8a.pfb></usr/local/t
+exlive/2016/texmf-dist/fonts/type1/urw/times/utmbi8a.pfb></usr/local/texlive/20
+16/texmf-dist/fonts/type1/urw/times/utmr8a.pfb></usr/local/texlive/2016/texmf-d
+ist/fonts/type1/urw/times/utmri8a.pfb>
+Output written on relatorio.pdf (9 pages, 407539 bytes).
 PDF statistics:
- 55 PDF objects out of 1000 (max. 8388607)
- 35 compressed objects within 1 object stream
+ 69 PDF objects out of 1000 (max. 8388607)
+ 45 compressed objects within 1 object stream
  0 named destinations out of 1000 (max. 500000)
  33 words of extra memory for PDF output out of 10000 (max. 10000000)
 

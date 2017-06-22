@@ -12,304 +12,91 @@
 #include <math.h>
 #include <stdio.h>
 
-#define _PI_ 3.14159
 
-float *vertexB;
-float *normalB;
-unsigned int *indices;
+#define _USE_MATH_DEFINES
+#include <math.h>
 
-float alfa = 0.0f, beta = 0.0f, radius = 5.0f;
-float camX, camY, camZ;
-
-GLuint buffers[2];
-
-GLuint vertexCount, vertices;
-
-
-int timebase = 0, frame = 0;
-
-
-void glewInit();
-
-void sphericalToCartesian() {
-
-	camX = radius * cos(beta) * sin(alfa);
-	camY = radius * sin(beta);
-	camZ = radius * cos(beta) * cos(alfa);
-}
-
+double i = 0;
 
 void changeSize(int w, int h) {
 
-	// Prevent a divide by zero, when window is too short
-	// (you cant make a window with zero width).
-	if(h == 0)
-		h = 1;
+    // Prevent a divide by zero, when window is too short
+    // (you cant make a window with zero width).
+    if (h == 0)
+        h = 1;
 
-	// compute window's aspect ratio 
-	float ratio = w * 1.0 / h;
+    // compute window's aspect ratio
+    float ratio = w * 1.0 / h;
 
-	// Reset the coordinate system before modifying
-	glMatrixMode(GL_PROJECTION);
-	glLoadIdentity();
-	
-	// Set the viewport to be the entire window
+    // Set the projection matrix as current
+    glMatrixMode(GL_PROJECTION);
+
+    // Load Identity Matrix
+    glLoadIdentity();
+
+    // Set the viewport to be the entire window
     glViewport(0, 0, w, h);
 
-	// Set the correct perspective
-	gluPerspective(45,ratio,1,1000);
+    // Set perspective
+    gluPerspective(45.0f, ratio, 1.0f, 1000.0f);
 
-	// return to the model view matrix mode
-	glMatrixMode(GL_MODELVIEW);
-}
-
-
-
-void prepareCilinder(float height, float radius, int sides) {
-
-	float *v;
-
-	v = (float *)malloc(sizeof(float) * 4 * 3 * 3 * sides);
-
-	int vertex = 0;
-	float delta = 2.0f * _PI_ / sides;
-
-	for (int i = 0; i < sides; ++i) {
-		// top
-		// central point
-		v[vertex*3 + 0] = 0.0f; 
-		v[vertex*3 + 1] = height /2.0f;
-		v[vertex*3 + 2] = 0.0f;
-
-		vertex++;
-		v[vertex*3 + 0] = radius * sin( i * delta);
-		v[vertex*3 + 1] = height /2.0f;
-		v[vertex*3 + 2] = radius * cos( i * delta);
-
-		vertex++;
-		v[vertex*3 + 0] = radius * sin( (i+1) * delta);
-		v[vertex*3 + 1] = height /2.0f;
-		v[vertex*3 + 2] = radius * cos( (i+1) * delta);
-
-		// body
-		// triângulo 1
-		vertex++;
-		v[vertex*3 + 0] = radius * sin( (i+1) * delta);
-		v[vertex*3 + 1] = height /2.0f;
-		v[vertex*3 + 2] = radius * cos( (i+1) * delta);
-
-		vertex++;
-		v[vertex*3 + 0] = radius * sin( i * delta);
-		v[vertex*3 + 1] = height /2.0f;
-		v[vertex*3 + 2] = radius * cos( i * delta);
-
-		vertex++;
-		v[vertex*3 + 0] = radius * sin( i * delta);
-		v[vertex*3 + 1] = -height /2.0f;
-		v[vertex*3 + 2] = radius * cos( i * delta);
-
-		// triangle 2
-		vertex++;
-		v[vertex*3 + 0] = radius * sin( (i+1) * delta);
-		v[vertex*3 + 1] = -height /2.0f;
-		v[vertex*3 + 2] = radius * cos( (i+1) * delta);
-
-		vertex++;
-		v[vertex*3 + 0] = radius * sin( (i+1) * delta);
-		v[vertex*3 + 1] = height /2.0f;
-		v[vertex*3 + 2] = radius * cos( (i+1) * delta);
-
-		vertex++;
-		v[vertex*3 + 0] = radius * sin( i * delta);
-		v[vertex*3 + 1] = -height /2.0f;
-		v[vertex*3 + 2] = radius * cos( i * delta);
-
-		// base
-		// central point
-		vertex++;
-		v[vertex*3 + 0] = 0.0f; 
-		v[vertex*3 + 1] = -height /2.0f;
-		v[vertex*3 + 2] = 0.0f;
-
-		vertex++;
-		v[vertex*3 + 0] = radius * sin( (i+1) * delta);
-		v[vertex*3 + 1] = -height /2.0f;
-		v[vertex*3 + 2] = radius * cos( (i+1) * delta);
-
-		vertex++;
-		v[vertex*3 + 0] = radius * sin( i * delta);
-		v[vertex*3 + 1] = -height /2.0f;
-		v[vertex*3 + 2] = radius * cos( i * delta);
-
-		vertex++;
-	}
-
-	vertexCount = vertex;
-
-	glGenBuffers(1, &vertices);
-	glBindBuffer(GL_ARRAY_BUFFER,vertices);
-	glBufferData(GL_ARRAY_BUFFER, sizeof(float) * vertexCount * 3, v,     GL_STATIC_DRAW);
-
-	free(v);
-
-}
-
-
-void drawCilinder() {
-	glGenBuffers(2, buffers);
-
-	glBindBuffer(GL_ARRAY_BUFFER,vertices);
-	glVertexPointer(3,GL_FLOAT,0,0);
-
-	glBindBuffer(GL_ARRAY_BUFFER,vertexCount);
-	glNormalPointer(GL_FLOAT,0,0);
-
-	glBufferData(GL_ARRAY_BUFFER,buffers[2], vertexB, GL_STATIC_DRAW);
-
-
-	float white[4] = {1,1,1,1};
-	glMaterialfv(GL_FRONT, GL_AMBIENT_AND_DIFFUSE, white);
-
-	glDrawArrays(GL_TRIANGLES, 0, vertexCount);
-		
-	glBindBuffer(GL_ARRAY_BUFFER,vertices);
-	glVertexPointer(3,GL_FLOAT,0,0);
-
-	glDrawArrays(GL_TRIANGLES, 0, vertexCount);
+    // return to the model view matrix mode
+    glMatrixMode(GL_MODELVIEW);
 }
 
 
 void renderScene(void) {
 
-	GLfloat amb[4] = {0.2, 0.2, 0.2, 1.0};
-	GLfloat diff[4] = {1.0, 1.0, 1.0, 1.0};
-	GLfloat pos[4] = {0.0, 0.0 ,1.0, 0.0};
-	float fps;
-	int time;
-	char s[64];
+    // clear buffers
+    glClear(GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT);
+
+    // set the camera
+    glLoadIdentity();
+    glTranslatef(0.0,0.0,-3.0);
+    glutSolidTeapot(0.5);
+    glTranslatef(0.0,0.0,3.0);
+
+    gluLookAt(0.0, 0.0, -7.0,
+              0.0, 0.0, -1.0,
+              0.0f, 1.0f, 0.0f);
+    glTranslatef(0.0,0.0,-10.0);
+    glutWireTeapot (fabs(sin (i)));
+    i += .001;
+
+    // put drawing instructions here
+
+    //glutSolidTeapot(.5);
 
 
-
-	//glClearColor(0.0f,0.0f,0.0f,0.0f);
-	glClear(GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT);
-
-	glLoadIdentity();
-
-	float red[4] = {0.8f, 0.2f, 0.2f, 1.0f};
-	glMaterialfv(GL_FRONT, GL_DIFFUSE, red);
-	glMaterialf(GL_FRONT,GL_SHININESS,100);
-
-	gluLookAt(camX,camY,camZ, 
-		      0.0,0.0,0.0,
-			  0.0f,1.0f,0.0f);
-
-	glLightfv(GL_LIGHT0, GL_POSITION, pos);
-	glLightfv(GL_LIGHT0, GL_AMBIENT, amb);
-	glLightfv(GL_LIGHT0, GL_DIFFUSE, diff);
-
-
-
-	drawCilinder();
-
-	glEnable(GL_LIGHT5);
-
-
-	frame++;
-	time=glutGet(GLUT_ELAPSED_TIME); 
-	if (time - timebase > 1000) { 
-		fps = frame*1000.0/(time-timebase); 
-		timebase = time; 
-		frame = 0; 
-		sprintf(s, "FPS: %f6.2", fps);
-		glutSetWindowTitle(s);
-	} 
-
-// End of frame
-	glutSwapBuffers();
+    // End of frame
+    glutSwapBuffers();
 }
-
-
-
-void processKeys(int key, int xx, int yy) 
-{
-	switch(key) {
-	
-		case GLUT_KEY_RIGHT: 
-						alfa -=0.1; break;
-
-		case GLUT_KEY_LEFT: 
-						alfa += 0.1; break;
-
-		case GLUT_KEY_UP : 
-						beta += 0.1f;
-						if (beta > 1.5f)
-							beta = 1.5f;
-						break;
-
-		case GLUT_KEY_DOWN: 
-						beta -= 0.1f; 
-						if (beta < -1.5f)
-							beta = -1.5f;
-						break;
-
-		case GLUT_KEY_PAGE_DOWN : radius -= 0.1f; 
-			if (radius < 0.1f)
-				radius = 0.1f;
-			break;
-
-		case GLUT_KEY_PAGE_UP: radius += 0.1f; break;
-
-	}
-	sphericalToCartesian();
-
-}
-
-
-
-void initGL() {
-
-// OpenGL settings 
-	glEnable(GL_DEPTH_TEST);
-	glEnable(GL_CULL_FACE);
-
-// init
-	sphericalToCartesian();
-	glEnableClientState(GL_VERTEX_ARRAY);
-
-	prepareCilinder(2,1,16);
-}
-
 
 int main(int argc, char **argv) {
 
-// init
-	glutInit(&argc, argv);
-	glutInitDisplayMode(GLUT_DEPTH | GLUT_DOUBLE | GLUT_RGBA);
-	glutInitWindowPosition(100, 100);
-	glutInitWindowSize(320, 320);
-	glutCreateWindow("CG@DI-UM");
+    float i = 0;
 
-// callback registration
-	glutDisplayFunc(renderScene);
-	glutIdleFunc(renderScene);
-	glutReshapeFunc(changeSize);
-
-// keyboard callback registration
-	glutSpecialFunc(processKeys);
-
-// init GLEW
-	//glewInit();
-
-	initGL();
-
-	glutMainLoop();
-	glEnableClientState(GL_VERTEX_ARRAY);
-	glEnableClientState(GL_NORMAL_ARRAY);
-	glEnable(GL_LIGHTING);
+    // put init here
+    glutInit(&argc, argv);
 
 
-	return 0;
+    // put callback registration here
+
+    glutInitWindowSize(800, 800);
+    glutInitWindowPosition(100, 100);
+    glutCreateWindow("HelloTeapot");
+
+    glutDisplayFunc(renderScene);
+    glutReshapeFunc(changeSize);
+    glutIdleFunc(renderScene);
+
+    // OpenGL settings
+    glEnable(GL_DEPTH_TEST);
+    glEnable(GL_CULL_FACE);
+    glClearColor(0.5f, 0.0f, 0.0f, 0.0f);
+
+    // enter GLUT's main loop
+    glutMainLoop();
+
+    return 0;
 }
-
-
-

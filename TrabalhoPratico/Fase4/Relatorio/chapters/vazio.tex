@@ -1,0 +1,20 @@
+Para tal criou-se uma nova classe Material para albergar todas as informações necessárias que são as cores RGB para as componentes ambiente, difusa, especular e emissiva.
+O XMLParser proporciona portanto novas funções para extrair cada uma das componentes do .xml, colocando como placeholders 0.2 para cada cor ambiente, 0.8 para difusa, e 0 para as restantes. Para o sol utilizou-se as propriedades difusas a 0 e as emissivas a 1 para
+poder ser visível apesar da luz estar no seu interior e portanto não o afetar.
+
+Apesar destes pequenos pontos em falta real¸cam-se alguns pontos, como por exemplo, o facto de ser possível utilizar uma imagem como background da cena, imagem essa que é aplicada a uma esfera que engloba a câmara e se move com a mesma. 
+
+Para além disso a performance do engine é boa, já que o número de fps ronda o limite de 60 quando está correr o sistema solar.
+
+
+\subsection{Superficies de Bezier}
+
+O vector da normal em qualquer ponto da Superfície é definido pelo produto cruzado dos vetores das tangentes normalizadas.”, ou seja, começa-se por calcular as tangentes em u e em v normalizando-se em seguida os vetores, por fim, faz-se o produto cruzado entre os dois vetores e obtem-se uma normal.
+
+
+Para calcular as tangentes usa-se uma função que recebe como argumentos o valor de u e v a matriz m os pontos da patch de bezier e um inteiro de serve para indicar se estamos a calcular em u ou em v, esta funçao devolve-nos um ponto, referente a x, y ou z que é passado na matrix p.
+Cross e normalize, assim como o nome indica são as funções do cálculo do produto cruzado e da normalização. De realçar que para a normalização, verifica-se se o divisor é diferente de 0, pois se for 0 será devolvido o erro de not a number, pois é impossivel dividir por zero.
+A funçãoo bezierTangent calcula os diversos pontos em u e em v. De realçar que os pontos são guardados numa queue de nome derivada para serem posteriormente escritos no ficheiro .3d.
+
+
+As texturas são só obtidas quando no xml se pode encontrar um atributo texture num \textit{file} e para as representar deveria-se ter utilizado uma classe Texture para não sobrecarregar o Group.
