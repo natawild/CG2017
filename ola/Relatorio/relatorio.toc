@@ -1,9 +1,0 @@
-\select@language {portuges}
-\contentsline {chapter}{\numberline {1}Classes}{1}
-\contentsline {section}{\numberline {1.1}Ponto3D}{1}
-\contentsline {section}{\numberline {1.2}CoordsPolares}{2}
-\contentsline {section}{\numberline {1.3}CoordsEsfericas}{3}
-\contentsline {section}{\numberline {1.4}Figura}{5}
-\contentsline {section}{\numberline {1.5}TinyXML-2}{5}
-\contentsline {chapter}{\numberline {2}Motor}{6}
-\contentsline {chapter}{\numberline {3}Gerador}{7}
